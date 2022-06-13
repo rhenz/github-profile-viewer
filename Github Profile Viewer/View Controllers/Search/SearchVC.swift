@@ -9,6 +9,11 @@ import UIKit
 
 class SearchVC: UIViewController {
 
+    // MARK: - UI
+    
+    let logoImageView = UIImageView()
+    let usernameTextField = GPVTextField()
+    let callToActionButton = GPVButton(backgroundColor: .systemGreen, title: "Get Followers")
     
     // MARK: - View Lifecycle
     
