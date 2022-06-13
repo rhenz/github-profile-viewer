@@ -9,10 +9,11 @@ import UIKit
 
 class SearchVC: UIViewController {
 
+    
     // MARK: - View Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemMint
+        view.backgroundColor = .systemBackground
     }
 }
