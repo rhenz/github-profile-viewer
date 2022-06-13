@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		C939B03328579BF3005827DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C939B03228579BF3005827DC /* AppDelegate.swift */; };
 		C939B03528579BF3005827DC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C939B03428579BF3005827DC /* SceneDelegate.swift */; };
-		C939B03728579BF3005827DC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C939B03628579BF3005827DC /* ViewController.swift */; };
 		C939B03C28579BF4005827DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C939B03B28579BF4005827DC /* Assets.xcassets */; };
 		C939B03F28579BF4005827DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C939B03D28579BF4005827DC /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -18,7 +17,6 @@
 		C939B02F28579BF3005827DC /* Github Profile Viewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Github Profile Viewer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C939B03228579BF3005827DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C939B03428579BF3005827DC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C939B03628579BF3005827DC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C939B03B28579BF4005827DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C939B03E28579BF4005827DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C939B04028579BF4005827DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "Github Profile Viewer/Supporting Files/Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -91,7 +89,6 @@
 		C939B04928579D13005827DC /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				C939B03628579BF3005827DC /* ViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -166,7 +163,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C939B03728579BF3005827DC /* ViewController.swift in Sources */,
 				C939B03328579BF3005827DC /* AppDelegate.swift in Sources */,
 				C939B03528579BF3005827DC /* SceneDelegate.swift in Sources */,
 			);

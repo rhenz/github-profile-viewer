@@ -19,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
         
         // Setup Root View Controller
-        window?.rootViewController = ViewController()
+        window?.rootViewController = UITabBarController()
         window?.makeKeyAndVisible()
     }
 
