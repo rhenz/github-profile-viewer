@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		C92BE7392857A1AE00672CC1 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92BE7382857A1AE00672CC1 /* SearchVC.swift */; };
 		C92BE73C2857A1E000672CC1 /* FavoritesListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92BE73B2857A1E000672CC1 /* FavoritesListVC.swift */; };
+		C92BE7402857ABFC00672CC1 /* GPVButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92BE73F2857ABFC00672CC1 /* GPVButton.swift */; };
+		C92BE7452857B6E800672CC1 /* GPVTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92BE7442857B6E800672CC1 /* GPVTextField.swift */; };
 		C939B03328579BF3005827DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C939B03228579BF3005827DC /* AppDelegate.swift */; };
 		C939B03528579BF3005827DC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C939B03428579BF3005827DC /* SceneDelegate.swift */; };
 		C939B03C28579BF4005827DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C939B03B28579BF4005827DC /* Assets.xcassets */; };
@@ -18,6 +20,8 @@
 /* Begin PBXFileReference section */
 		C92BE7382857A1AE00672CC1 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		C92BE73B2857A1E000672CC1 /* FavoritesListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListVC.swift; sourceTree = "<group>"; };
+		C92BE73F2857ABFC00672CC1 /* GPVButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPVButton.swift; sourceTree = "<group>"; };
+		C92BE7442857B6E800672CC1 /* GPVTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPVTextField.swift; sourceTree = "<group>"; };
 		C939B02F28579BF3005827DC /* Github Profile Viewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Github Profile Viewer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C939B03228579BF3005827DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C939B03428579BF3005827DC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +57,31 @@
 			path = "Favorites List";
 			sourceTree = "<group>";
 		};
+		C92BE73E2857ABD000672CC1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C92BE7432857B6D800672CC1 /* Textfields */,
+				C92BE7422857AC0900672CC1 /* Buttons */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C92BE7422857AC0900672CC1 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				C92BE73F2857ABFC00672CC1 /* GPVButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		C92BE7432857B6D800672CC1 /* Textfields */ = {
+			isa = PBXGroup;
+			children = (
+				C92BE7442857B6E800672CC1 /* GPVTextField.swift */,
+			);
+			path = Textfields;
+			sourceTree = "<group>";
+		};
 		C939B02628579BF3005827DC = {
 			isa = PBXGroup;
 			children = (
@@ -73,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				C939B04628579CE6005827DC /* Application Delegates */,
+				C92BE73E2857ABD000672CC1 /* Views */,
 				C939B04928579D13005827DC /* View Controllers */,
 				C939B04728579CF3005827DC /* Resources */,
 				C939B04828579D01005827DC /* Supporting Files */,
@@ -188,7 +218,9 @@
 				C92BE73C2857A1E000672CC1 /* FavoritesListVC.swift in Sources */,
 				C92BE7392857A1AE00672CC1 /* SearchVC.swift in Sources */,
 				C939B03328579BF3005827DC /* AppDelegate.swift in Sources */,
+				C92BE7402857ABFC00672CC1 /* GPVButton.swift in Sources */,
 				C939B03528579BF3005827DC /* SceneDelegate.swift in Sources */,
+				C92BE7452857B6E800672CC1 /* GPVTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
