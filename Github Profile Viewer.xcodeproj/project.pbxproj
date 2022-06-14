@@ -15,6 +15,7 @@
 		C939B03528579BF3005827DC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C939B03428579BF3005827DC /* SceneDelegate.swift */; };
 		C939B03C28579BF4005827DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C939B03B28579BF4005827DC /* Assets.xcassets */; };
 		C939B03F28579BF4005827DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C939B03D28579BF4005827DC /* LaunchScreen.storyboard */; };
+		C97D2F36285909C800744065 /* KeyboardDismissable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97D2F35285909C800744065 /* KeyboardDismissable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		C939B03B28579BF4005827DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C939B03E28579BF4005827DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C939B04028579BF4005827DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "Github Profile Viewer/Supporting Files/Info.plist"; sourceTree = SOURCE_ROOT; };
+		C97D2F35285909C800744065 /* KeyboardDismissable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardDismissable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				C939B04628579CE6005827DC /* Application Delegates */,
+				C97D2F342859099C00744065 /* Protocols */,
 				C92BE73E2857ABD000672CC1 /* Views */,
 				C939B04928579D13005827DC /* View Controllers */,
 				C939B04728579CF3005827DC /* Resources */,
@@ -143,6 +146,14 @@
 				C92BE73D2857A1F000672CC1 /* Favorites List */,
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		C97D2F342859099C00744065 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				C97D2F35285909C800744065 /* KeyboardDismissable.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -218,6 +229,7 @@
 				C92BE73C2857A1E000672CC1 /* FavoritesListVC.swift in Sources */,
 				C92BE7392857A1AE00672CC1 /* SearchVC.swift in Sources */,
 				C939B03328579BF3005827DC /* AppDelegate.swift in Sources */,
+				C97D2F36285909C800744065 /* KeyboardDismissable.swift in Sources */,
 				C92BE7402857ABFC00672CC1 /* GPVButton.swift in Sources */,
 				C939B03528579BF3005827DC /* SceneDelegate.swift in Sources */,
 				C92BE7452857B6E800672CC1 /* GPVTextField.swift in Sources */,
