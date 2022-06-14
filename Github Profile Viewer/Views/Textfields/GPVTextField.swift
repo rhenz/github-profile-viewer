@@ -20,6 +20,10 @@ class GPVTextField: UITextField {
         fatalError("You should not initialize GPVTextField using init(coder:)")
     }
     
+    override var intrinsicContentSize: CGSize {
+        return CGSize(width: CGFloat.leastNonzeroMagnitude, height: 50)
+    }
+    
     // MARK: - Helper Methods
     
     private func configure() {

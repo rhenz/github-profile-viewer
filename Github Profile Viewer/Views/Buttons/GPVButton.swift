@@ -20,6 +20,10 @@ class GPVButton: UIButton {
         fatalError("You should not initialize GPVButton using init(coder:)")
     }
     
+    override var intrinsicContentSize: CGSize {
+        CGSize(width: CGFloat.leastNonzeroMagnitude, height: 50)
+    }
+    
     init(backgroundColor: UIColor, title: String) {
         super.init(frame: .zero)
         self.backgroundColor = backgroundColor
