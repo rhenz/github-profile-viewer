@@ -16,6 +16,8 @@
 		C939B03C28579BF4005827DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C939B03B28579BF4005827DC /* Assets.xcassets */; };
 		C939B03F28579BF4005827DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C939B03D28579BF4005827DC /* LaunchScreen.storyboard */; };
 		C97D2F36285909C800744065 /* KeyboardDismissable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97D2F35285909C800744065 /* KeyboardDismissable.swift */; };
+		C97D2F3928590C9300744065 /* FollowersListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97D2F3828590C9300744065 /* FollowersListVC.swift */; };
+		C97D2F3C285916BC00744065 /* String+Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97D2F3B285916BC00744065 /* String+Validation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		C939B03E28579BF4005827DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C939B04028579BF4005827DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "Github Profile Viewer/Supporting Files/Info.plist"; sourceTree = SOURCE_ROOT; };
 		C97D2F35285909C800744065 /* KeyboardDismissable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardDismissable.swift; sourceTree = "<group>"; };
+		C97D2F3828590C9300744065 /* FollowersListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersListVC.swift; sourceTree = "<group>"; };
+		C97D2F3B285916BC00744065 /* String+Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Validation.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				C939B04628579CE6005827DC /* Application Delegates */,
+				C97D2F3A2859167400744065 /* Extensions */,
 				C97D2F342859099C00744065 /* Protocols */,
 				C92BE73E2857ABD000672CC1 /* Views */,
 				C939B04928579D13005827DC /* View Controllers */,
@@ -144,6 +149,7 @@
 			children = (
 				C92BE73A2857A1B000672CC1 /* Search */,
 				C92BE73D2857A1F000672CC1 /* Favorites List */,
+				C97D2F3728590C7E00744065 /* Followers */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -154,6 +160,22 @@
 				C97D2F35285909C800744065 /* KeyboardDismissable.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		C97D2F3728590C7E00744065 /* Followers */ = {
+			isa = PBXGroup;
+			children = (
+				C97D2F3828590C9300744065 /* FollowersListVC.swift */,
+			);
+			path = Followers;
+			sourceTree = "<group>";
+		};
+		C97D2F3A2859167400744065 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C97D2F3B285916BC00744065 /* String+Validation.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,8 +248,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C97D2F3C285916BC00744065 /* String+Validation.swift in Sources */,
 				C92BE73C2857A1E000672CC1 /* FavoritesListVC.swift in Sources */,
 				C92BE7392857A1AE00672CC1 /* SearchVC.swift in Sources */,
+				C97D2F3928590C9300744065 /* FollowersListVC.swift in Sources */,
 				C939B03328579BF3005827DC /* AppDelegate.swift in Sources */,
 				C97D2F36285909C800744065 /* KeyboardDismissable.swift in Sources */,
 				C92BE7402857ABFC00672CC1 /* GPVButton.swift in Sources */,

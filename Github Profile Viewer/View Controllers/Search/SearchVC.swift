@@ -15,6 +15,9 @@ class SearchVC: UIViewController, KeyboardDismissable {
     let usernameTextField = GPVTextField()
     let callToActionButton = GPVButton(backgroundColor: .systemGreen, title: "Get Followers")
     
+    // MARK: - Properties
+    private var isUsernameEntered: Bool { !(usernameTextField.text?.isEmpty ?? false) }
+    
     // MARK: - View Lifecycle
     
     override func viewDidLoad() {
@@ -32,13 +35,32 @@ class SearchVC: UIViewController, KeyboardDismissable {
         super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = true
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.isNavigationBarHidden = false
+    }
+    
+    // MARK: - Helper Methods
+    
+    @objc private func pushToFollowersListVC() {
+        guard let username = usernameTextField.text, isUsernameEntered else {
+            print("Username is empty!")
+            return
+        }
+        
+        let followersListVC = FollowersListVC(username: username)
+        navigationController?.pushViewController(followersListVC, animated: true)
+    }
 }
                                          
 
 // MARK: - Setup UI
+
 extension SearchVC {
     private func configureLogoImageView() {
         view.addSubview(logoImageView)
+        
         logoImageView.translatesAutoresizingMaskIntoConstraints = false
         logoImageView.image = UIImage(named: "gh-logo")
         logoImageView.contentMode = .scaleAspectFit
@@ -54,6 +76,9 @@ extension SearchVC {
     private func configureTextField() {
         view.addSubview(usernameTextField)
         
+        usernameTextField.returnKeyType = .go
+        usernameTextField.delegate = self
+        
         NSLayoutConstraint.activate([
             usernameTextField.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 48),
             usernameTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
@@ -64,10 +89,22 @@ extension SearchVC {
     private func configureCallToActionButton() {
         view.addSubview(callToActionButton)
         
+        callToActionButton.addTarget(self, action: #selector(pushToFollowersListVC), for: .touchUpInside)
+        
         NSLayoutConstraint.activate([
             callToActionButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -50),
             callToActionButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
             callToActionButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50)
         ])
+    }
+}
+
+
+// MARK: - UITextField Delegate
+
+extension SearchVC: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        pushToFollowersListVC()
+        return true
     }
 }
