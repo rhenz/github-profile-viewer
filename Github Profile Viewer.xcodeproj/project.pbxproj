@@ -18,6 +18,8 @@
 		C97D2F36285909C800744065 /* KeyboardDismissable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97D2F35285909C800744065 /* KeyboardDismissable.swift */; };
 		C97D2F3928590C9300744065 /* FollowersListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97D2F3828590C9300744065 /* FollowersListVC.swift */; };
 		C97D2F3C285916BC00744065 /* String+Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97D2F3B285916BC00744065 /* String+Validation.swift */; };
+		C9AFDF95285A484000493F55 /* GPVTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AFDF94285A484000493F55 /* GPVTitleLabel.swift */; };
+		C9AFDF97285A4A9B00493F55 /* GPVBodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AFDF96285A4A9B00493F55 /* GPVBodyLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		C97D2F35285909C800744065 /* KeyboardDismissable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardDismissable.swift; sourceTree = "<group>"; };
 		C97D2F3828590C9300744065 /* FollowersListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersListVC.swift; sourceTree = "<group>"; };
 		C97D2F3B285916BC00744065 /* String+Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Validation.swift"; sourceTree = "<group>"; };
+		C9AFDF94285A484000493F55 /* GPVTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPVTitleLabel.swift; sourceTree = "<group>"; };
+		C9AFDF96285A4A9B00493F55 /* GPVBodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPVBodyLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +72,7 @@
 			children = (
 				C92BE7432857B6D800672CC1 /* Textfields */,
 				C92BE7422857AC0900672CC1 /* Buttons */,
+				C9AFDF99285A4AA900493F55 /* Labels */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -178,6 +183,15 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		C9AFDF99285A4AA900493F55 /* Labels */ = {
+			isa = PBXGroup;
+			children = (
+				C9AFDF94285A484000493F55 /* GPVTitleLabel.swift */,
+				C9AFDF96285A4A9B00493F55 /* GPVBodyLabel.swift */,
+			);
+			path = Labels;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -254,9 +268,11 @@
 				C97D2F3928590C9300744065 /* FollowersListVC.swift in Sources */,
 				C939B03328579BF3005827DC /* AppDelegate.swift in Sources */,
 				C97D2F36285909C800744065 /* KeyboardDismissable.swift in Sources */,
+				C9AFDF97285A4A9B00493F55 /* GPVBodyLabel.swift in Sources */,
 				C92BE7402857ABFC00672CC1 /* GPVButton.swift in Sources */,
 				C939B03528579BF3005827DC /* SceneDelegate.swift in Sources */,
 				C92BE7452857B6E800672CC1 /* GPVTextField.swift in Sources */,
+				C9AFDF95285A484000493F55 /* GPVTitleLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
