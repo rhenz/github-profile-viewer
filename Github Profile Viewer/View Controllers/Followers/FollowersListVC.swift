@@ -33,6 +33,7 @@ class FollowersListVC: UIViewController {
     }
     
     // MARK: - Helper Methods
+    
     private func setupViews() {
         view.backgroundColor = .systemBackground
         

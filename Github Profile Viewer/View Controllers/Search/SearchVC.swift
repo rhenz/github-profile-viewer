@@ -53,7 +53,15 @@ class SearchVC: UIViewController, KeyboardDismissable {
         navigationController?.pushViewController(followersListVC, animated: true)
     }
 }
-                                         
+
+// MARK: - UITextField Delegate
+
+extension SearchVC: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        pushToFollowersListVC()
+        return true
+    }
+}
 
 // MARK: - Setup UI
 
@@ -96,15 +104,5 @@ extension SearchVC {
             callToActionButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
             callToActionButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50)
         ])
-    }
-}
-
-
-// MARK: - UITextField Delegate
-
-extension SearchVC: UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        pushToFollowersListVC()
-        return true
     }
 }
