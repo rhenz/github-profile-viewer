@@ -21,6 +21,7 @@
 		C9AFDF95285A484000493F55 /* GPVTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AFDF94285A484000493F55 /* GPVTitleLabel.swift */; };
 		C9AFDF97285A4A9B00493F55 /* GPVBodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AFDF96285A4A9B00493F55 /* GPVBodyLabel.swift */; };
 		C9AFDF9C285A4BB700493F55 /* GPVAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AFDF9B285A4BB700493F55 /* GPVAlertVC.swift */; };
+		C9AFDF9E285A521600493F55 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AFDF9D285A521600493F55 /* UIViewController+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		C9AFDF94285A484000493F55 /* GPVTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPVTitleLabel.swift; sourceTree = "<group>"; };
 		C9AFDF96285A4A9B00493F55 /* GPVBodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPVBodyLabel.swift; sourceTree = "<group>"; };
 		C9AFDF9B285A4BB700493F55 /* GPVAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPVAlertVC.swift; sourceTree = "<group>"; };
+		C9AFDF9D285A521600493F55 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				C97D2F3B285916BC00744065 /* String+Validation.swift */,
+				C9AFDF9D285A521600493F55 /* UIViewController+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C97D2F3C285916BC00744065 /* String+Validation.swift in Sources */,
+				C9AFDF9E285A521600493F55 /* UIViewController+Ext.swift in Sources */,
 				C9AFDF9C285A4BB700493F55 /* GPVAlertVC.swift in Sources */,
 				C92BE73C2857A1E000672CC1 /* FavoritesListVC.swift in Sources */,
 				C92BE7392857A1AE00672CC1 /* SearchVC.swift in Sources */,
