@@ -19,6 +19,6 @@ struct User: Decodable {
     var followers: Int
     var following: Int
     
-    #warning("Can make this Data type and change dateDecodingStrategy")
+    #warning("Can make this Date type and change dateDecodingStrategy")
     var createdAt: String
 }

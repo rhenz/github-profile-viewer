@@ -33,12 +33,7 @@ class SearchVC: UIViewController, KeyboardDismissable {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.isNavigationBarHidden = true
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        navigationController?.isNavigationBarHidden = false
+        navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
     // MARK: - Helper Methods
