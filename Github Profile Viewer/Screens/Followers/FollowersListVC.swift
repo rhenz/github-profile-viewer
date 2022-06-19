@@ -35,7 +35,7 @@ class FollowersListVC: UIViewController {
                                            page: 1) { followers, error in
             
             guard let followers = followers else {
-                self.presentGPVAlertOnMainThread(title: "Bad Stuff Happened", message: error!, buttonTitle: "Ok")
+                self.presentGPVAlertOnMainThread(title: "Bad Stuff Happened", message: error!.rawValue, buttonTitle: "Ok")
                 return
             }
 
