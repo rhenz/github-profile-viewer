@@ -24,6 +24,7 @@
 		C9AFDF97285A4A9B00493F55 /* GPVBodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AFDF96285A4A9B00493F55 /* GPVBodyLabel.swift */; };
 		C9AFDF9C285A4BB700493F55 /* GPVAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AFDF9B285A4BB700493F55 /* GPVAlertVC.swift */; };
 		C9AFDF9E285A521600493F55 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AFDF9D285A521600493F55 /* UIViewController+Ext.swift */; };
+		C9B67DBB285F9091003EFE50 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B67DBA285F9091003EFE50 /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		C9AFDF96285A4A9B00493F55 /* GPVBodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPVBodyLabel.swift; sourceTree = "<group>"; };
 		C9AFDF9B285A4BB700493F55 /* GPVAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPVAlertVC.swift; sourceTree = "<group>"; };
 		C9AFDF9D285A521600493F55 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
+		C9B67DBA285F9091003EFE50 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				C939B04628579CE6005827DC /* Application Delegates */,
+				C9B67DB9285F907C003EFE50 /* Managers */,
 				C9139BAD285CDC0500BDBA51 /* Models */,
 				C97D2F3A2859167400744065 /* Extensions */,
 				C97D2F342859099C00744065 /* Protocols */,
@@ -220,6 +223,14 @@
 			path = CustomAlert;
 			sourceTree = "<group>";
 		};
+		C9B67DB9285F907C003EFE50 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				C9B67DBA285F9091003EFE50 /* NetworkManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -294,6 +305,7 @@
 				C9139BAF285CDC0F00BDBA51 /* Follower.swift in Sources */,
 				C9AFDF9E285A521600493F55 /* UIViewController+Ext.swift in Sources */,
 				C9AFDF9C285A4BB700493F55 /* GPVAlertVC.swift in Sources */,
+				C9B67DBB285F9091003EFE50 /* NetworkManager.swift in Sources */,
 				C92BE73C2857A1E000672CC1 /* FavoritesListVC.swift in Sources */,
 				C92BE7392857A1AE00672CC1 /* SearchVC.swift in Sources */,
 				C97D2F3928590C9300744065 /* FollowersListVC.swift in Sources */,
