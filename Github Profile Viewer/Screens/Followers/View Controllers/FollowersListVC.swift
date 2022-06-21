@@ -9,11 +9,19 @@ import UIKit
 
 class FollowersListVC: UIViewController {
     
+    // MARK: -
+    
+    enum Section {
+        case main
+    }
+    
     // MARK: - Properties
     
     var username: String
+    private var followers: [Follower] = []
     
     var collectionView: UICollectionView!
+    var dataSource: UICollectionViewDiffableDataSource<Section, Follower>!
     
     // MARK: - Init
     
@@ -34,6 +42,7 @@ class FollowersListVC: UIViewController {
         configureCollectionView()
         configureViewController()
         getFollowers()
+        configureDataSource()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -61,7 +70,8 @@ class FollowersListVC: UIViewController {
         NetworkManager.shared.getFollowers(for: username, page: 1) { result in
             switch result {
             case .success(let followers):
-                print("Followers.count = \(followers.count)")
+                self.followers = followers
+                self.updateData()
             case .failure(let error):
                 self.presentGPVAlertOnMainThread(title: "Bad Stuff Happened", message: error.rawValue, buttonTitle: "Ok")
             }
@@ -80,5 +90,25 @@ class FollowersListVC: UIViewController {
         flowLayout.itemSize = CGSize(width: itemWidth, height: itemWidth + 40)
         
         return flowLayout
+    }
+    
+    private func configureDataSource() {
+        dataSource = UICollectionViewDiffableDataSource<Section, Follower>(collectionView: collectionView, cellProvider: { collectionView, indexPath, follower in
+            
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FollowerCell.reuseIdentifier, for: indexPath) as? FollowerCell else {
+                fatalError("Failed to dequeue reusable cell of FollowerCell")
+            }
+            
+            cell.set(follower: follower)
+            return cell
+        })
+    }
+    
+    func updateData() {
+        var snapshot = NSDiffableDataSourceSnapshot<Section, Follower>()
+        snapshot.appendSections([.main])
+        snapshot.appendItems(followers)
+        
+        dataSource.apply(snapshot, animatingDifferences: true)
     }
 }
