@@ -17,6 +17,7 @@
 		C939B03528579BF3005827DC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C939B03428579BF3005827DC /* SceneDelegate.swift */; };
 		C939B03C28579BF4005827DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C939B03B28579BF4005827DC /* Assets.xcassets */; };
 		C939B03F28579BF4005827DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C939B03D28579BF4005827DC /* LaunchScreen.storyboard */; };
+		C97278DB28637B03003B3E15 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97278DA28637B03003B3E15 /* UIHelper.swift */; };
 		C97D2F36285909C800744065 /* KeyboardDismissable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97D2F35285909C800744065 /* KeyboardDismissable.swift */; };
 		C97D2F3928590C9300744065 /* FollowersListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97D2F3828590C9300744065 /* FollowersListVC.swift */; };
 		C97D2F3C285916BC00744065 /* String+Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97D2F3B285916BC00744065 /* String+Validation.swift */; };
@@ -43,6 +44,7 @@
 		C939B03B28579BF4005827DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C939B03E28579BF4005827DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C939B04028579BF4005827DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "Github Profile Viewer/Supporting Files/Info.plist"; sourceTree = SOURCE_ROOT; };
+		C97278DA28637B03003B3E15 /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
 		C97D2F35285909C800744065 /* KeyboardDismissable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardDismissable.swift; sourceTree = "<group>"; };
 		C97D2F3828590C9300744065 /* FollowersListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersListVC.swift; sourceTree = "<group>"; };
 		C97D2F3B285916BC00744065 /* String+Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Validation.swift"; sourceTree = "<group>"; };
@@ -244,6 +246,7 @@
 			isa = PBXGroup;
 			children = (
 				C9B67DBD285F9E68003EFE50 /* GPVError.swift */,
+				C97278DA28637B03003B3E15 /* UIHelper.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 				C97D2F3C285916BC00744065 /* String+Validation.swift in Sources */,
 				C9B67DBE285F9E68003EFE50 /* GPVError.swift in Sources */,
 				C9139BAF285CDC0F00BDBA51 /* Follower.swift in Sources */,
+				C97278DB28637B03003B3E15 /* UIHelper.swift in Sources */,
 				C9AFDF9E285A521600493F55 /* UIViewController+Ext.swift in Sources */,
 				C9AFDF9C285A4BB700493F55 /* GPVAlertVC.swift in Sources */,
 				C9B67DBB285F9091003EFE50 /* NetworkManager.swift in Sources */,
