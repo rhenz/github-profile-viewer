@@ -16,6 +16,7 @@ class FollowerCell: UICollectionViewCell {
     let avatarImageView = GPVAvatarImageView(frame: .zero)
     let usernameLabel = GPVTitleLabel(textAlignment: .center, fontSize: 16)
     
+    let dispatchQueue = DispatchQueue(label: "FollowerCell Dispatch Queue")
     
     // MARK: - Init
     
@@ -32,6 +33,10 @@ class FollowerCell: UICollectionViewCell {
     
     func set(follower: Follower) {
         usernameLabel.text = follower.login
+        
+        dispatchQueue.async {
+            self.avatarImageView.downloadImage(from: follower.avatarUrl)
+        }
     }
     
     private func configure() {    
