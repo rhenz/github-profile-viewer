@@ -65,9 +65,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             
             // For navigation bar
 //            let navBarAppearance = UINavigationBarAppearance()
-//            navBarAppearance.configureWithDefaultBackground()
+//            navBarAppearance.configureWithOpaqueBackground()
 //            UINavigationBar.appearance().standardAppearance = navBarAppearance
 //            UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance
+//            UINavigationBar.appearance().compactAppearance = navBarAppearance
         }
     }
     

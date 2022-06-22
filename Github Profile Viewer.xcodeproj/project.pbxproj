@@ -141,8 +141,8 @@
 		C939B03128579BF3005827DC /* Github Profile Viewer */ = {
 			isa = PBXGroup;
 			children = (
-				C9B67DBC285F9E3A003EFE50 /* Utilities */,
 				C939B04628579CE6005827DC /* Application Delegates */,
+				C9B67DBC285F9E3A003EFE50 /* Utilities */,
 				C9B67DB9285F907C003EFE50 /* Managers */,
 				C9139BAD285CDC0500BDBA51 /* Models */,
 				C97D2F3A2859167400744065 /* Extensions */,
