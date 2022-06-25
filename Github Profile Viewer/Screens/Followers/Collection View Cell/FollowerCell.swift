@@ -35,7 +35,7 @@ class FollowerCell: UICollectionViewCell {
         usernameLabel.text = follower.login
         
         dispatchQueue.async {
-            self.avatarImageView.downloadImage(from: follower.avatarUrl)
+            self.avatarImageView.setImageWithCaching(for: follower.avatarUrl)
         }
     }
     
