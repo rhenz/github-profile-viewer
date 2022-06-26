@@ -23,11 +23,6 @@ class FollowersListVC: UIViewController {
     private var hasMoreFollowers = true
     private let followersPerPage = 100
     
-    private lazy var activityIndicator: LoadMoreActivityIndicator = {
-        let activityIndicator = LoadMoreActivityIndicator(scrollView: collectionView, spacingFromLastCell: 10, spacingFromLastCellWhenLoadMoreActionStart: 60)
-        return activityIndicator
-    }()
-    
     var collectionView: UICollectionView!
     var dataSource: UICollectionViewDiffableDataSource<Section, Follower>!
     
@@ -76,19 +71,18 @@ class FollowersListVC: UIViewController {
     }
     
     private func getFollowers(username: String, page: Int) {
-        self.activityIndicator.start()
+        showLoadingView()
         NetworkManager.shared.getFollowers(for: username, page: page) { [weak self] result in
+            self?.dismissLoadingView()
             guard let self = self else { return }
-            DispatchQueue.main.async {
-                self.activityIndicator.stop()
-                switch result {
-                case .success(let followers):
-                    if followers.count < self.followersPerPage { self.hasMoreFollowers = false }
-                    self.followers.append(contentsOf: followers)
-                    self.updateData()
-                case .failure(let error):
-                    self.presentGPVAlertOnMainThread(title: "Bad Stuff Happened", message: error.rawValue, buttonTitle: "Ok")
-                }
+            
+            switch result {
+            case .success(let followers):
+                if followers.count < 100 { self.hasMoreFollowers = false }
+                self.followers.append(contentsOf: followers)
+                self.updateData()
+            case .failure(let error):
+                self.presentGPVAlertOnMainThread(title: "Bad Stuff Happened", message: error.rawValue, buttonTitle: "Ok")
             }
         }
     }
