@@ -18,7 +18,13 @@ class FollowersListVC: UIViewController {
     // MARK: - Properties
     
     var username: String
-    private var followers: [Follower] = []
+    private var followers: [Follower] = [] {
+        didSet {
+            guard followers.isEmpty else { return }
+            DispatchQueue.main.async { self.showEmptyStateView(with: "This user doesn't have any followers. Go follow them! 😃", in: self.view) }
+        }
+    }
+    
     private var currentPage = 1
     private var hasMoreFollowers = true
     private let followersPerPage = 100
