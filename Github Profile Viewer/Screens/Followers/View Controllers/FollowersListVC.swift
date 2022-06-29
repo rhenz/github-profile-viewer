@@ -48,6 +48,7 @@ class FollowersListVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureSearchController()
         configureCollectionView()
         configureViewController()
         getFollowers(username: username, page: currentPage)
@@ -80,7 +81,6 @@ class FollowersListVC: UIViewController {
         
         dataSource.apply(snapshot, animatingDifferences: true)
     }
-    
 }
 
 // MARK: - Setup UI
@@ -99,6 +99,13 @@ extension FollowersListVC {
         
         // Set delegate
         collectionView.delegate = self
+    }
+    
+    func configureSearchController() {
+        let searchController = UISearchController()
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.placeholder = "Search for a username"
+        navigationItem.searchController = searchController
     }
 }
 
@@ -137,5 +144,13 @@ extension FollowersListVC: UICollectionViewDelegate {
             currentPage += 1
             getFollowers(username: username, page: currentPage)
         }
+    }
+}
+
+// MARK: - UISearchResultsUpdating
+
+extension FollowersListVC: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        
     }
 }
