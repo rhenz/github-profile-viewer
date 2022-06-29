@@ -76,11 +76,13 @@ class FollowersListVC: UIViewController {
     }
     
     func updateData(for followers: [Follower]) {
-        var snapshot = NSDiffableDataSourceSnapshot<Section, Follower>()
-        snapshot.appendSections([.main])
-        snapshot.appendItems(followers)
-        
-        dataSource.apply(snapshot, animatingDifferences: true)
+        DispatchQueue.global(qos: .userInteractive).async {
+            var snapshot = NSDiffableDataSourceSnapshot<Section, Follower>()
+            snapshot.appendSections([.main])
+            snapshot.appendItems(followers)
+            
+            self.dataSource.apply(snapshot, animatingDifferences: true)
+        }
     }
 }
 
