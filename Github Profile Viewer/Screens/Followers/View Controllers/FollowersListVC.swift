@@ -24,6 +24,7 @@ class FollowersListVC: UIViewController {
             DispatchQueue.main.async { self.showEmptyStateView(with: "This user doesn't have any followers. Go follow them! 😃", in: self.view) }
         }
     }
+    private var filteredFollowers: [Follower] = []
     
     private var currentPage = 1
     private var hasMoreFollowers = true
@@ -74,7 +75,7 @@ class FollowersListVC: UIViewController {
         })
     }
     
-    func updateData() {
+    func updateData(for followers: [Follower]) {
         var snapshot = NSDiffableDataSourceSnapshot<Section, Follower>()
         snapshot.appendSections([.main])
         snapshot.appendItems(followers)
@@ -122,7 +123,7 @@ extension FollowersListVC {
             case .success(let followers):
                 if followers.count < 100 { self.hasMoreFollowers = false }
                 self.followers.append(contentsOf: followers)
-                self.updateData()
+                self.updateData(for: self.followers)
             case .failure(let error):
                 self.presentGPVAlertOnMainThread(title: "Bad Stuff Happened", message: error.rawValue, buttonTitle: "Ok")
             }
@@ -151,6 +152,9 @@ extension FollowersListVC: UICollectionViewDelegate {
 
 extension FollowersListVC: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
+        guard let filter = searchController.searchBar.text, !filter.isEmpty else { return }
         
+        filteredFollowers = followers.filter { $0.login.lowercased().contains(filter.lowercased()) }
+        updateData(for: filteredFollowers)
     }
 }
