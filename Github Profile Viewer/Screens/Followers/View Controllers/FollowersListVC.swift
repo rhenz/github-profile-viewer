@@ -61,38 +61,6 @@ class FollowersListVC: UIViewController {
     
     // MARK: - Helper Methods
     
-    private func configureViewController() {
-        view.backgroundColor = .systemBackground
-        navigationController?.navigationBar.prefersLargeTitles = true
-    }
-    
-    private func configureCollectionView() {
-        collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: UIHelper.createThreeColumnLayout(in: view))
-        
-        view.addSubview(collectionView)
-        collectionView.register(FollowerCell.self, forCellWithReuseIdentifier: FollowerCell.reuseIdentifier)
-        
-        // Set delegate
-        collectionView.delegate = self
-    }
-    
-    private func getFollowers(username: String, page: Int) {
-        showLoadingView()
-        NetworkManager.shared.getFollowers(for: username, page: page) { [weak self] result in
-            self?.dismissLoadingView()
-            guard let self = self else { return }
-            
-            switch result {
-            case .success(let followers):
-                if followers.count < 100 { self.hasMoreFollowers = false }
-                self.followers.append(contentsOf: followers)
-                self.updateData()
-            case .failure(let error):
-                self.presentGPVAlertOnMainThread(title: "Bad Stuff Happened", message: error.rawValue, buttonTitle: "Ok")
-            }
-        }
-    }
-    
     private func configureDataSource() {
         dataSource = UICollectionViewDiffableDataSource<Section, Follower>(collectionView: collectionView, cellProvider: { collectionView, indexPath, follower in
             
@@ -112,8 +80,48 @@ class FollowersListVC: UIViewController {
         
         dataSource.apply(snapshot, animatingDifferences: true)
     }
+    
 }
 
+// MARK: - Setup UI
+
+extension FollowersListVC {
+    private func configureViewController() {
+        view.backgroundColor = .systemBackground
+        navigationController?.navigationBar.prefersLargeTitles = true
+    }
+    
+    private func configureCollectionView() {
+        collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: UIHelper.createThreeColumnLayout(in: view))
+        
+        view.addSubview(collectionView)
+        collectionView.register(FollowerCell.self, forCellWithReuseIdentifier: FollowerCell.reuseIdentifier)
+        
+        // Set delegate
+        collectionView.delegate = self
+    }
+}
+
+// MARK: - Endpoint Call Methods
+
+extension FollowersListVC {
+    private func getFollowers(username: String, page: Int) {
+        showLoadingView()
+        NetworkManager.shared.getFollowers(for: username, page: page) { [weak self] result in
+            self?.dismissLoadingView()
+            guard let self = self else { return }
+            
+            switch result {
+            case .success(let followers):
+                if followers.count < 100 { self.hasMoreFollowers = false }
+                self.followers.append(contentsOf: followers)
+                self.updateData()
+            case .failure(let error):
+                self.presentGPVAlertOnMainThread(title: "Bad Stuff Happened", message: error.rawValue, buttonTitle: "Ok")
+            }
+        }
+    }
+}
 
 // MARK: - UICollectionViewDelegate
 
