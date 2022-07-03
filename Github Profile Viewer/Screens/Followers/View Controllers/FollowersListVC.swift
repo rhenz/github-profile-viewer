@@ -29,6 +29,7 @@ class FollowersListVC: UIViewController {
     private var currentPage = 1
     private var hasMoreFollowers = true
     private let followersPerPage = 100
+    private var isSearching = false
     
     var collectionView: UICollectionView!
     var dataSource: UICollectionViewDiffableDataSource<Section, Follower>!
@@ -149,6 +150,15 @@ extension FollowersListVC: UICollectionViewDelegate {
             getFollowers(username: username, page: currentPage)
         }
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let activeArray = isSearching ? filteredFollowers : followers
+        let follower = activeArray[indexPath.item]
+        
+        let destVC = UserInfoVC(username: follower.login)
+        let navController = UINavigationController(rootViewController: destVC)
+        present(navController, animated: true)
+    }
 }
 
 // MARK: - UISearchResultsUpdating
@@ -156,12 +166,13 @@ extension FollowersListVC: UICollectionViewDelegate {
 extension FollowersListVC: UISearchResultsUpdating, UISearchBarDelegate {
     func updateSearchResults(for searchController: UISearchController) {
         guard let filter = searchController.searchBar.text, !filter.isEmpty else { return }
-        
+        isSearching = true
         filteredFollowers = followers.filter { $0.login.lowercased().contains(filter.lowercased()) }
         updateData(for: filteredFollowers)
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        isSearching = false
         updateData(for: followers)
     }
 }

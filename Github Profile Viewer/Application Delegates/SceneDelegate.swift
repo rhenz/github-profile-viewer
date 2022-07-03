@@ -64,11 +64,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
             
             // For navigation bar
-//            let navBarAppearance = UINavigationBarAppearance()
-//            navBarAppearance.configureWithOpaqueBackground()
-//            UINavigationBar.appearance().standardAppearance = navBarAppearance
-//            UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance
-//            UINavigationBar.appearance().compactAppearance = navBarAppearance
+            let navBarAppearance = UINavigationBarAppearance()
+            navBarAppearance.configureWithDefaultBackground()
+            UINavigationBar.appearance().standardAppearance = navBarAppearance
+            UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance
+            UINavigationBar.appearance().compactAppearance = navBarAppearance
         }
     }
     
