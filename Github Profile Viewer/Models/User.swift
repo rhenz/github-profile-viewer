@@ -8,16 +8,16 @@
 import Foundation
 
 struct User: Decodable {
-    var login: String
-    var avatarUrl: String
+    let login: String
+    let avatarUrl: String
     var name: String?
     var location: String?
     var bio: String?
-    var publicRepos: Int
-    var publicGists: Int
-    var htmlUrl: String
-    var followers: Int
-    var following: Int
+    let publicRepos: Int
+    let publicGists: Int
+    let htmlUrl: String
+    let followers: Int
+    let following: Int
     
     #warning("Can make this Date type and change dateDecodingStrategy")
     var createdAt: String
