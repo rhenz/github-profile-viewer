@@ -114,7 +114,7 @@ extension FollowersListVC {
     }
 }
 
-// MARK: - Endpoint Call Methods
+// MARK: - Network Request
 
 extension FollowersListVC {
     private func getFollowers(username: String, page: Int) {
