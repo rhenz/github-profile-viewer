@@ -30,6 +30,7 @@ class UserInfoVC: UIViewController {
         print("selected username: \(username)")
         configureMainView()
         configureNavigationBar()
+        getUserInfo()
     }
 }
 
@@ -43,6 +44,25 @@ extension UserInfoVC {
     private func configureNavigationBar() {
         let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissVC))
         navigationItem.rightBarButtonItem = doneButton
+    }
+}
+
+// MARK: - Network Request
+
+extension UserInfoVC {
+    private func getUserInfo() {
+        showLoadingView()
+        NetworkManager.shared.getUserInfo(for: username) { [weak self] result in
+            self?.dismissLoadingView()
+            guard let self = self else { return }
+            
+            switch result {
+            case .success(let user):
+                print(user)
+            case .failure(let error):
+                self.presentGPVAlertOnMainThread(title: "Bad Stuff Happened", message: error.rawValue, buttonTitle: "Ok")
+            }
+        }
     }
 }
 
