@@ -13,6 +13,8 @@ class UserInfoVC: UIViewController {
     
     var username: String
     
+    let headerView = UIView()
+    
     // MARK: - Init
     required init(username: String) {
         self.username = username
@@ -31,6 +33,7 @@ class UserInfoVC: UIViewController {
         configureMainView()
         configureNavigationBar()
         getUserInfo()
+        layoutUI()
     }
 }
 
@@ -45,6 +48,25 @@ extension UserInfoVC {
         let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissVC))
         navigationItem.rightBarButtonItem = doneButton
     }
+    
+    private func layoutUI() {
+        view.addSubview(headerView)
+        headerView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            headerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            headerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            headerView.heightAnchor.constraint(equalToConstant: 180)
+        ])
+    }
+    
+    func add(childVC: UIViewController, to containerView: UIView) {
+        addChild(childVC)
+        containerView.addSubview(childVC.view)
+        childVC.view.frame = containerView.bounds
+        childVC.didMove(toParent: self)
+    }
 }
 
 // MARK: - Network Request
@@ -58,7 +80,9 @@ extension UserInfoVC {
             
             switch result {
             case .success(let user):
-                print(user)
+                DispatchQueue.main.async {
+                    self.add(childVC: GPVUserInfoHeaderVC(user: user), to: self.headerView)
+                }
             case .failure(let error):
                 self.presentGPVAlertOnMainThread(title: "Bad Stuff Happened", message: error.rawValue, buttonTitle: "Ok")
             }
