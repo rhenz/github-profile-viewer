@@ -34,8 +34,8 @@ class UserInfoVC: UIViewController {
         print("selected username: \(username)")
         configureMainView()
         configureNavigationBar()
-        getUserInfo()
         layoutUI()
+        getUserInfo()
     }
 }
 
