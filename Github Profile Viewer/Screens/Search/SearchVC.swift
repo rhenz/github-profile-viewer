@@ -27,7 +27,6 @@ class SearchVC: UIViewController, KeyboardDismissable {
         configureLogoImageView()
         configureTextField()
         configureCallToActionButton()
-        
         createDismissKeyboardTapGesture()
     }
     
