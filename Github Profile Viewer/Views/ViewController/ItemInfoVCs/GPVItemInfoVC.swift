@@ -17,16 +17,6 @@ class GPVItemInfoVC: UIViewController {
     let actionButton = GPVButton()
     
     // MARK: - Init
-    init(for user: UserInfoPresentable, itemInfoViewTypeOne: GPVItemInfoView.ItemInfoType, itemInfoViewTypeTwo: GPVItemInfoView.ItemInfoType) {
-        super.init(nibName: nil, bundle: nil)
-        
-        itemInfoViewOne.setContent(withCount: displayCount(for: itemInfoViewTypeOne, user: user), for: itemInfoViewTypeOne)
-        itemInfoViewTwo.setContent(withCount: displayCount(for: itemInfoViewTypeTwo, user: user), for: itemInfoViewTypeTwo)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
     
     // MARK: - View Lifecycle
     
@@ -35,21 +25,7 @@ class GPVItemInfoVC: UIViewController {
         configureBackgroundView()
         configureStackView()
         layoutUI()
-    }
-    
-    private func displayCount(for itemInfoViewType: GPVItemInfoView.ItemInfoType, user: UserInfoPresentable) -> Int {
-        switch itemInfoViewType {
-        case .repos:
-            return user.publicRepos
-        case .gists:
-            return user.publicGists
-        case .followers:
-            return user.followers
-        case .following:
-            return user.following
-        }
-    }
-    
+    }    
 }
 
 // MARK: - Setup UI

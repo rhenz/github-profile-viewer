@@ -34,6 +34,8 @@
 		C9AFDF9E285A521600493F55 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AFDF9D285A521600493F55 /* UIViewController+Ext.swift */; };
 		C9B67DBB285F9091003EFE50 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B67DBA285F9091003EFE50 /* NetworkManager.swift */; };
 		C9B67DBE285F9E68003EFE50 /* GPVError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B67DBD285F9E68003EFE50 /* GPVError.swift */; };
+		C9BDC46C2880559E00151D9D /* GPVRepoItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BDC46B2880559E00151D9D /* GPVRepoItemVC.swift */; };
+		C9BDC46E288063D200151D9D /* GPVFollowersItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BDC46D288063D200151D9D /* GPVFollowersItemVC.swift */; };
 		C9C08B272867080900AD1D8B /* UIImageView+Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C08B262867080900AD1D8B /* UIImageView+Download.swift */; };
 		C9CD85B72868A89B003CA47B /* LoadMoreActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CD85B62868A89B003CA47B /* LoadMoreActivityIndicator.swift */; };
 		C9CE936A2871F31300612AE9 /* UserInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CE93692871F31300612AE9 /* UserInfoVC.swift */; };
@@ -81,6 +83,8 @@
 		C9AFDF9D285A521600493F55 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		C9B67DBA285F9091003EFE50 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		C9B67DBD285F9E68003EFE50 /* GPVError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPVError.swift; sourceTree = "<group>"; };
+		C9BDC46B2880559E00151D9D /* GPVRepoItemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPVRepoItemVC.swift; sourceTree = "<group>"; };
+		C9BDC46D288063D200151D9D /* GPVFollowersItemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPVFollowersItemVC.swift; sourceTree = "<group>"; };
 		C9C08B262867080900AD1D8B /* UIImageView+Download.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Download.swift"; sourceTree = "<group>"; };
 		C9CD85B62868A89B003CA47B /* LoadMoreActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadMoreActivityIndicator.swift; sourceTree = "<group>"; };
 		C9CE935D2871EFB700612AE9 /* Github Profile ViewerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Github Profile ViewerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -283,7 +287,7 @@
 			isa = PBXGroup;
 			children = (
 				C9A8BDCD28728892000A1BE5 /* GPVUserInfoHeaderVC.swift */,
-				C97CF39C287B32A8003F923D /* GPVItemInfoVC.swift */,
+				C9BDC46F2880641A00151D9D /* ItemInfoVCs */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -322,6 +326,16 @@
 				C9A8BDD22872906F000A1BE5 /* Constants.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		C9BDC46F2880641A00151D9D /* ItemInfoVCs */ = {
+			isa = PBXGroup;
+			children = (
+				C97CF39C287B32A8003F923D /* GPVItemInfoVC.swift */,
+				C9BDC46B2880559E00151D9D /* GPVRepoItemVC.swift */,
+				C9BDC46D288063D200151D9D /* GPVFollowersItemVC.swift */,
+			);
+			path = ItemInfoVCs;
 			sourceTree = "<group>";
 		};
 		C9CD85B52868A887003CA47B /* ActivityIndicator */ = {
@@ -469,6 +483,7 @@
 				C9B67DBE285F9E68003EFE50 /* GPVError.swift in Sources */,
 				C98C6B0628773E3200D8685E /* GPVItemInfoView.swift in Sources */,
 				C9139BAF285CDC0F00BDBA51 /* Follower.swift in Sources */,
+				C9BDC46E288063D200151D9D /* GPVFollowersItemVC.swift in Sources */,
 				C92B70672869FBCF00340E68 /* GPVEmptyStateView.swift in Sources */,
 				C97CF3A1287B38EA003F923D /* UserInfoPresentable.swift in Sources */,
 				C97278DB28637B03003B3E15 /* UIHelper.swift in Sources */,
@@ -492,6 +507,7 @@
 				C97CF39D287B32A8003F923D /* GPVItemInfoVC.swift in Sources */,
 				C92BE7452857B6E800672CC1 /* GPVTextField.swift in Sources */,
 				C9AFDF95285A484000493F55 /* GPVTitleLabel.swift in Sources */,
+				C9BDC46C2880559E00151D9D /* GPVRepoItemVC.swift in Sources */,
 				C9CE936A2871F31300612AE9 /* UserInfoVC.swift in Sources */,
 				C9A8BDD32872906F000A1BE5 /* Constants.swift in Sources */,
 			);

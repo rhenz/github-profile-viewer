@@ -102,8 +102,8 @@ extension UserInfoVC {
             case .success(let user):
                 DispatchQueue.main.async {
                     self.add(childVC: GPVUserInfoHeaderVC(user: user), to: self.headerView)
-                    self.add(childVC: GPVItemInfoVC(for: user, itemInfoViewTypeOne: .followers, itemInfoViewTypeTwo: .following), to: self.itemViewOne)
-                    self.add(childVC: GPVItemInfoVC(for: user, itemInfoViewTypeOne: .repos, itemInfoViewTypeTwo: .gists), to: self.itemViewTwo)
+                    self.add(childVC: GPVRepoItemVC(user: user), to: self.itemViewOne)
+                    self.add(childVC: GPVFollowersItemVC(user: user), to: self.itemViewTwo)
                 }
             case .failure(let error):
                 self.presentGPVAlertOnMainThread(title: "Bad Stuff Happened", message: error.rawValue, buttonTitle: "Ok")

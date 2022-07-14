@@ -40,4 +40,11 @@ class GPVButton: UIButton {
         layer.cornerRadius = 10
         titleLabel?.font = UIFont.preferredFont(forTextStyle: .headline)
     }
+    
+    // MARK: - Internal Methods
+    
+    func set(backgroundColor: UIColor, title: String) {
+        self.backgroundColor = backgroundColor
+        setTitle(title, for: .normal)
+    }
 }
