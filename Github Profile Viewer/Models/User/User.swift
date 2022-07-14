@@ -22,3 +22,5 @@ struct User: Decodable {
     #warning("Can make this Date type and change dateDecodingStrategy")
     var createdAt: String
 }
+
+extension User: UserInfoPresentable { }
