@@ -16,6 +16,7 @@ class UserInfoVC: UIViewController {
     let headerView = UIView()
     let itemViewOne = UIView()
     let itemViewTwo = UIView()
+    let dateLabel = GPVBodyLabel(textAlignment: .center)
     var itemViews: [UIView] = []
     
     // MARK: - Init
@@ -53,7 +54,9 @@ extension UserInfoVC {
     }
     
     private func layoutUI() {
-        itemViews = [headerView, itemViewOne, itemViewTwo]
+        itemViews = [headerView, itemViewOne, itemViewTwo, dateLabel]
+        
+        
         
         let padding: CGFloat = 20
         let itemHeight: CGFloat = 140
@@ -77,7 +80,10 @@ extension UserInfoVC {
             itemViewOne.heightAnchor.constraint(equalToConstant: itemHeight),
             
             itemViewTwo.topAnchor.constraint(equalTo: itemViewOne.bottomAnchor, constant: padding),
-            itemViewTwo.heightAnchor.constraint(equalToConstant: itemHeight)
+            itemViewTwo.heightAnchor.constraint(equalToConstant: itemHeight),
+            
+            dateLabel.topAnchor.constraint(equalTo: itemViewTwo.bottomAnchor, constant: padding),
+            dateLabel.heightAnchor.constraint(equalToConstant: 18)
         ])
     }
     
@@ -104,6 +110,7 @@ extension UserInfoVC {
                     self.add(childVC: GPVUserInfoHeaderVC(user: user), to: self.headerView)
                     self.add(childVC: GPVRepoItemVC(user: user), to: self.itemViewOne)
                     self.add(childVC: GPVFollowersItemVC(user: user), to: self.itemViewTwo)
+                    self.dateLabel.text = "Github since " + user.createdAt.convertToDisplayFormat
                 }
             case .failure(let error):
                 self.presentGPVAlertOnMainThread(title: "Bad Stuff Happened", message: error.rawValue, buttonTitle: "Ok")

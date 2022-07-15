@@ -18,8 +18,6 @@ struct User: Decodable {
     let htmlUrl: String
     let followers: Int
     let following: Int
-    
-    #warning("Can make this Date type and change dateDecodingStrategy")
     var createdAt: String
 }
 
