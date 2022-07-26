@@ -7,9 +7,9 @@
 
 import UIKit
 
+
 protocol UserInfoVCDelegate: AnyObject {
-    func didTapGithubProfile()
-    func didTapGetFollowers()
+    func userInfoVC(_ userInfoVC: UserInfoVC, didTapOnGetFollowers user: User)
 }
 
 class UserInfoVC: UIViewController {
@@ -23,6 +23,8 @@ class UserInfoVC: UIViewController {
     let itemViewTwo = UIView()
     let dateLabel = GPVBodyLabel(textAlignment: .center)
     var itemViews: [UIView] = []
+    
+    weak var delegate: UserInfoVCDelegate?
     
     // MARK: - Init
     required init(username: String) {
@@ -145,11 +147,16 @@ extension UserInfoVC {
 // MARK: -
 
 extension UserInfoVC: GPVRepoItemVCDelegate, GPVFollowersItemVCDelegate {
-    func didTapRepoButton(_ repoItemVC: GPVRepoItemVC) {
-        print("Did Tap Repo Button")
+    func didTapRepoButton(_ repoItemVC: GPVRepoItemVC, for user: User) {
+        guard let url = URL(string: user.htmlUrl) else {
+            presentGPVAlertOnMainThread(title: "Invalid URL", message: "The url attached to this user is invalid", buttonTitle: "Ok")
+            return
+        }
+        
+        presentSafariVC(with: url)
     }
     
-    func didTapFollowersButton(_ followersItemVC: GPVFollowersItemVC) {
-        print("Did Tap Followers Button")
+    func didTapFollowersButton(_ followersItemVC: GPVFollowersItemVC, for user: User) {
+        delegate?.userInfoVC(self, didTapOnGetFollowers: user)
     }
 }

@@ -8,7 +8,7 @@
 import UIKit
 
 protocol GPVRepoItemVCDelegate: AnyObject {
-    func didTapRepoButton(_ repoItemVC: GPVRepoItemVC)
+    func didTapRepoButton(_ repoItemVC: GPVRepoItemVC, for user: User)
 }
 
 
@@ -42,7 +42,7 @@ class GPVRepoItemVC: GPVItemInfoVC {
 // MARK: - Actions
 extension GPVRepoItemVC {
     override func actionButtonTapped(_ sender: UIButton) {
-        delegate?.didTapRepoButton(self)
+        delegate?.didTapRepoButton(self, for: self.user)
     }
 }
 

@@ -8,7 +8,7 @@
 import UIKit
 
 protocol GPVFollowersItemVCDelegate: AnyObject {
-    func didTapFollowersButton(_ followersItemVC: GPVFollowersItemVC)
+    func didTapFollowersButton(_ followersItemVC: GPVFollowersItemVC, for user: User)
 }
 
 class GPVFollowersItemVC: GPVItemInfoVC {
@@ -39,7 +39,7 @@ class GPVFollowersItemVC: GPVItemInfoVC {
 // MARK: - Actions
 extension GPVFollowersItemVC {
     override func actionButtonTapped(_ sender: UIButton) {
-        delegate?.didTapFollowersButton(self)
+        delegate?.didTapFollowersButton(self, for: self.user)
     }
 }
 
