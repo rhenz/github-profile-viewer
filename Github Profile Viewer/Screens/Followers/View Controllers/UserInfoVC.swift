@@ -7,6 +7,11 @@
 
 import UIKit
 
+protocol UserInfoVCDelegate: AnyObject {
+    func didTapGithubProfile()
+    func didTapGetFollowers()
+}
+
 class UserInfoVC: UIViewController {
     
     // MARK: - Properties
@@ -108,8 +113,16 @@ extension UserInfoVC {
             case .success(let user):
                 DispatchQueue.main.async {
                     self.add(childVC: GPVUserInfoHeaderVC(user: user), to: self.headerView)
-                    self.add(childVC: GPVRepoItemVC(user: user), to: self.itemViewOne)
-                    self.add(childVC: GPVFollowersItemVC(user: user), to: self.itemViewTwo)
+                    
+                    let repoItemVC = GPVRepoItemVC(user: user)
+                    repoItemVC.delegate = self
+                    
+                    let followersItemVC = GPVFollowersItemVC(user: user)
+                    followersItemVC.delegate = self
+                    
+                    
+                    self.add(childVC: repoItemVC, to: self.itemViewOne)
+                    self.add(childVC: followersItemVC, to: self.itemViewTwo)
                     self.dateLabel.text = "Github since " + user.createdAt.convertToDisplayFormat
                 }
             case .failure(let error):
@@ -125,5 +138,18 @@ extension UserInfoVC {
 extension UserInfoVC {
     @objc private func dismissVC() {
         dismiss(animated: true)
+    }
+}
+
+
+// MARK: -
+
+extension UserInfoVC: GPVRepoItemVCDelegate, GPVFollowersItemVCDelegate {
+    func didTapRepoButton(_ repoItemVC: GPVRepoItemVC) {
+        print("Did Tap Repo Button")
+    }
+    
+    func didTapFollowersButton(_ followersItemVC: GPVFollowersItemVC) {
+        print("Did Tap Followers Button")
     }
 }

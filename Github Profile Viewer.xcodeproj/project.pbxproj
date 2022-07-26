@@ -255,6 +255,7 @@
 			isa = PBXGroup;
 			children = (
 				C9139BB0285CE1B700BDBA51 /* User.swift */,
+				C9C08B262867080900AD1D8B /* UIImageView+Download.swift */,
 				C97CF3A0287B38EA003F923D /* UserInfoPresentable.swift */,
 			);
 			path = User;
@@ -282,7 +283,6 @@
 			children = (
 				C97D2F3B285916BC00744065 /* String+Validation.swift */,
 				C9AFDF9D285A521600493F55 /* UIViewController+Ext.swift */,
-				C9C08B262867080900AD1D8B /* UIImageView+Download.swift */,
 				C923FB332881BC130021D892 /* Date+Ext.swift */,
 				C923FB352881BC1E0021D892 /* String+Ext.swift */,
 			);

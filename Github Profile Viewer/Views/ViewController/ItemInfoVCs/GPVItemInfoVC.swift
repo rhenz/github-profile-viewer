@@ -24,6 +24,7 @@ class GPVItemInfoVC: UIViewController {
         super.viewDidLoad()
         configureBackgroundView()
         configureStackView()
+        configureButton()
         layoutUI()
     }    
 }
@@ -31,6 +32,10 @@ class GPVItemInfoVC: UIViewController {
 // MARK: - Setup UI
 
 extension GPVItemInfoVC {
+    private func configureButton() {
+        actionButton.addTarget(self, action: #selector(actionButtonTapped(_:)), for: .touchUpInside)
+    }
+    
     private func configureBackgroundView() {
         view.layer.cornerRadius = 18
         view.backgroundColor = .secondarySystemBackground
@@ -64,4 +69,10 @@ extension GPVItemInfoVC {
             actionButton.heightAnchor.constraint(equalToConstant: 44)
         ])
     }
+}
+
+// MARK: - Actions
+
+extension GPVItemInfoVC {
+    @objc func actionButtonTapped(_ sender: UIButton) { }
 }

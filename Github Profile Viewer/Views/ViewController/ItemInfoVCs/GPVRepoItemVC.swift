@@ -5,12 +5,19 @@
 //  Created by John Salvador on 7/14/22.
 //
 
-import Foundation
+import UIKit
+
+protocol GPVRepoItemVCDelegate: AnyObject {
+    func didTapRepoButton(_ repoItemVC: GPVRepoItemVC)
+}
+
 
 class GPVRepoItemVC: GPVItemInfoVC {
     
     // MARK: - Properties
     private var user: User!
+    
+    weak var delegate: GPVRepoItemVCDelegate?
     
     // MARK: - Init
     init(user: User) {
@@ -27,6 +34,15 @@ class GPVRepoItemVC: GPVItemInfoVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+    }
+    
+    
+}
+
+// MARK: - Actions
+extension GPVRepoItemVC {
+    override func actionButtonTapped(_ sender: UIButton) {
+        delegate?.didTapRepoButton(self)
     }
 }
 

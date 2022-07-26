@@ -5,12 +5,18 @@
 //  Created by John Salvador on 7/14/22.
 //
 
-import Foundation
+import UIKit
+
+protocol GPVFollowersItemVCDelegate: AnyObject {
+    func didTapFollowersButton(_ followersItemVC: GPVFollowersItemVC)
+}
 
 class GPVFollowersItemVC: GPVItemInfoVC {
     
     // MARK: - Properties
     private var user: User!
+    
+    weak var delegate: GPVFollowersItemVCDelegate?
     
     // MARK: - Init
     init(user: User) {
@@ -27,6 +33,13 @@ class GPVFollowersItemVC: GPVItemInfoVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+    }
+}
+
+// MARK: - Actions
+extension GPVFollowersItemVC {
+    override func actionButtonTapped(_ sender: UIButton) {
+        delegate?.didTapFollowersButton(self)
     }
 }
 
