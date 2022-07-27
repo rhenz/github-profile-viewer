@@ -26,6 +26,8 @@
 		C97D2F36285909C800744065 /* KeyboardDismissable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97D2F35285909C800744065 /* KeyboardDismissable.swift */; };
 		C97D2F3928590C9300744065 /* FollowersListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97D2F3828590C9300744065 /* FollowersListVC.swift */; };
 		C97D2F3C285916BC00744065 /* String+Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97D2F3B285916BC00744065 /* String+Validation.swift */; };
+		C988EEAD28917816003406D6 /* PlistFavoriteUsersPersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C988EEAC28917816003406D6 /* PlistFavoriteUsersPersistenceManager.swift */; };
+		C988EEAF2891869A003406D6 /* FavoriteUsersPersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C988EEAE2891869A003406D6 /* FavoriteUsersPersistenceService.swift */; };
 		C98C6B0628773E3200D8685E /* GPVItemInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98C6B0528773E3200D8685E /* GPVItemInfoView.swift */; };
 		C9A8BDCE28728892000A1BE5 /* GPVUserInfoHeaderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A8BDCD28728892000A1BE5 /* GPVUserInfoHeaderVC.swift */; };
 		C9A8BDD1287288F2000A1BE5 /* GPVSecondaryTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A8BDD0287288F2000A1BE5 /* GPVSecondaryTitleLabel.swift */; };
@@ -77,6 +79,8 @@
 		C97D2F35285909C800744065 /* KeyboardDismissable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardDismissable.swift; sourceTree = "<group>"; };
 		C97D2F3828590C9300744065 /* FollowersListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersListVC.swift; sourceTree = "<group>"; };
 		C97D2F3B285916BC00744065 /* String+Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Validation.swift"; sourceTree = "<group>"; };
+		C988EEAC28917816003406D6 /* PlistFavoriteUsersPersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlistFavoriteUsersPersistenceManager.swift; sourceTree = "<group>"; };
+		C988EEAE2891869A003406D6 /* FavoriteUsersPersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteUsersPersistenceService.swift; sourceTree = "<group>"; };
 		C98C6B0528773E3200D8685E /* GPVItemInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPVItemInfoView.swift; sourceTree = "<group>"; };
 		C9A8BDCD28728892000A1BE5 /* GPVUserInfoHeaderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPVUserInfoHeaderVC.swift; sourceTree = "<group>"; };
 		C9A8BDD0287288F2000A1BE5 /* GPVSecondaryTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPVSecondaryTitleLabel.swift; sourceTree = "<group>"; };
@@ -265,6 +269,7 @@
 			isa = PBXGroup;
 			children = (
 				C97D2F35285909C800744065 /* KeyboardDismissable.swift */,
+				C988EEAE2891869A003406D6 /* FavoriteUsersPersistenceService.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -320,6 +325,7 @@
 			isa = PBXGroup;
 			children = (
 				C9B67DBA285F9091003EFE50 /* NetworkManager.swift */,
+				C988EEAC28917816003406D6 /* PlistFavoriteUsersPersistenceManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -485,6 +491,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9A8BDCE28728892000A1BE5 /* GPVUserInfoHeaderVC.swift in Sources */,
+				C988EEAD28917816003406D6 /* PlistFavoriteUsersPersistenceManager.swift in Sources */,
 				C97D2F3C285916BC00744065 /* String+Validation.swift in Sources */,
 				C9B67DBE285F9E68003EFE50 /* GPVError.swift in Sources */,
 				C98C6B0628773E3200D8685E /* GPVItemInfoView.swift in Sources */,
@@ -508,6 +515,7 @@
 				C9C08B272867080900AD1D8B /* UIImageView+Download.swift in Sources */,
 				C9DF6E332861ED4100A4C4E4 /* FollowerCell.swift in Sources */,
 				C97D2F36285909C800744065 /* KeyboardDismissable.swift in Sources */,
+				C988EEAF2891869A003406D6 /* FavoriteUsersPersistenceService.swift in Sources */,
 				C9AFDF97285A4A9B00493F55 /* GPVBodyLabel.swift in Sources */,
 				C92BE7402857ABFC00672CC1 /* GPVButton.swift in Sources */,
 				C939B03528579BF3005827DC /* SceneDelegate.swift in Sources */,
