@@ -10,8 +10,11 @@ import Foundation
 protocol FavoriteUsersPersistenceService {
     typealias RetrieveFavoritesResult = ((GPVError?) -> Void)
     
-    var favoriteUsers: [User] { get set }
+    var favoriteUsers: [User] { get }
     
-    func retrieveFavorites(completion: RetrieveFavoritesResult?)
     func save() throws
+    func add(favorite: User)
+    func remove(favorite: User)
+    func retrieveFavorites(completion: RetrieveFavoritesResult?)
+    
 }

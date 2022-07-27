@@ -44,7 +44,8 @@ class SearchVC: UIViewController, KeyboardDismissable {
             return
         }
         
-        let followersListVC = FollowersListVC(username: username)
+        let followersListVC = FollowersListVC(username: username,
+                                              favoritesPersistenceService: PlistFavoriteUsersPersistenceManager())
         navigationController?.pushViewController(followersListVC, animated: true)
     }
 }

@@ -35,10 +35,13 @@ class FollowersListVC: UIViewController {
     var collectionView: UICollectionView!
     var dataSource: UICollectionViewDiffableDataSource<Section, Follower>!
     
+    var favoritesPersistenceService: FavoriteUsersPersistenceService
+    
     // MARK: - Init
     
-    init(username: String) {
+    init(username: String, favoritesPersistenceService: FavoriteUsersPersistenceService) {
         self.username = username
+        self.favoritesPersistenceService = favoritesPersistenceService
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -147,7 +150,26 @@ extension FollowersListVC {
 extension FollowersListVC {
     
     @objc func addToFavoritesButtonTapped(_ sender: UIBarButtonItem) {
-        print("Y")
+        
+        // Check if user favorited already.
+        if favoritesPersistenceService.favoriteUsers.contains(where: {$0.login.lowercased() == self.username.lowercased() }) {
+            presentGPVAlertOnMainThread(title: "Notice", message: "You favorited this user already.", buttonTitle: "Ok")
+            return
+        }
+        
+        // Save to Favorites
+        showLoadingView()
+        NetworkManager.shared.getUserInfo(for: username) { [weak self] result in
+            self?.dismissLoadingView()
+            guard let self = self else { return }
+            switch result {
+            case .success(let user):
+                // Save to favorites
+                self.favoritesPersistenceService.add(favorite: user)
+            case .failure(let error):
+                self.presentGPVAlertOnMainThread(title: "Error", message: error.localizedDescription, buttonTitle: "Ok")
+            }
+        }
     }
 }
 

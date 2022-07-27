@@ -13,11 +13,11 @@ class PlistFavoriteUsersPersistenceManager: FavoriteUsersPersistenceService {
     // MARK: - Properties
     
     private let favoritesFilePath: URL = {
-        let directory = FileManager.default.urls(for: .userDirectory, in: .userDomainMask)[0]
+        let directory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
         return directory.appendingPathComponent("FavoriteUsers.plist")
     }()
     
-    var favoriteUsers = [User]()
+    private(set) var favoriteUsers = [User]()
     
     // MARK: - Init
     
@@ -35,7 +35,7 @@ class PlistFavoriteUsersPersistenceManager: FavoriteUsersPersistenceService {
     
     // MARK: - Methods
     
-    func add(favorite: User) {
+    func add(favorite: User)  {
         favoriteUsers.append(favorite)
     }
     
