@@ -103,6 +103,10 @@ extension FollowersListVC {
 extension FollowersListVC {
     private func configureNavigationBar() {
         navigationItem.title = username
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add,
+                                                            target: self,
+                                                            action: #selector(addToFavoritesButtonTapped(_:)))
     }
     
     private func configureViewController() {
@@ -135,6 +139,15 @@ extension FollowersListVC {
             emptyStateView.frame = self.view.bounds
             self.view.addSubview(emptyStateView)
         }
+    }
+}
+
+// MARK: - Actions
+
+extension FollowersListVC {
+    
+    @objc func addToFavoritesButtonTapped(_ sender: UIBarButtonItem) {
+        print("Y")
     }
 }
 
