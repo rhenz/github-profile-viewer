@@ -39,7 +39,7 @@ private extension SceneDelegate {
     }
     
     func createFavoritesNC() -> UINavigationController {
-        let favoritesVC = FavoritesListVC()
+        let favoritesVC = FavoritesListVC(persistenceService: PlistFavoriteUsersPersistenceManager())
         favoritesVC.title = "Favorites"
         favoritesVC.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 1)
         return UINavigationController(rootViewController: favoritesVC)
