@@ -40,7 +40,6 @@ class FollowersListVC: UIViewController {
     init(username: String) {
         self.username = username
         super.init(nibName: nil, bundle: nil)
-        self.title = username
     }
     
     required init?(coder: NSCoder) {
@@ -51,6 +50,7 @@ class FollowersListVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureNavigationBar()
         configureSearchController()
         configureCollectionView()
         configureViewController()
@@ -62,9 +62,11 @@ class FollowersListVC: UIViewController {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
-    
-    // MARK: - Helper Methods
-    
+}
+
+// MARK: - Helper Methods
+
+extension FollowersListVC {
     private func configureDataSource() {
         dataSource = UICollectionViewDiffableDataSource<Section, Follower>(collectionView: collectionView, cellProvider: { collectionView, indexPath, follower in
             
@@ -86,11 +88,23 @@ class FollowersListVC: UIViewController {
             self.dataSource.apply(snapshot, animatingDifferences: true)
         }
     }
+    
+    func resetFollowerListVCState() {
+        currentPage = 1
+        isSearching = false
+        followers.removeAll()
+        filteredFollowers.removeAll()
+        updateData(for: followers)
+    }
 }
 
 // MARK: - Setup UI
 
 extension FollowersListVC {
+    private func configureNavigationBar() {
+        navigationItem.title = username
+    }
+    
     private func configureViewController() {
         view.backgroundColor = .systemBackground
         navigationController?.navigationBar.prefersLargeTitles = true
@@ -187,15 +201,21 @@ extension FollowersListVC: UISearchResultsUpdating, UISearchBarDelegate {
     }
 }
 
+// MARK: - User Info VC Delegate
 
 extension FollowersListVC: UserInfoVCDelegate {
     func userInfoVC(_ userInfoVC: UserInfoVC, didTapGetFollowersFor user: User) {
+        
+        // Update current username
         self.username = user.login
+        
+        // Update navigation bar title
         navigationItem.title = username
-        currentPage = 1
-        followers.removeAll()
-        filteredFollowers.removeAll()
-        updateData(for: followers)
+        
+        // Reset VC State
+        resetFollowerListVCState()
+        
+        // Get Followers
         getFollowers(username: self.username, page: currentPage)
     }
 }
