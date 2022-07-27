@@ -18,7 +18,13 @@ class FollowersListVC: UIViewController {
     // MARK: - Properties
     
     var username: String
-    private var followers: [Follower] = []
+    private var followers: [Follower] = [] {
+        didSet {
+            if followers.count < 100 { self.hasMoreFollowers = false }
+            self.updateData(for: self.followers)
+        }
+    }
+    
     private var filteredFollowers: [Follower] = []
     
     private var currentPage = 1
@@ -129,10 +135,8 @@ extension FollowersListVC {
             
             switch result {
             case .success(let followers):
-                if !followers.isEmpty { self.showEmptyFollowersView(); return }
-                if followers.count < 100 { self.hasMoreFollowers = false }
+                if followers.isEmpty { self.showEmptyFollowersView(); return }
                 self.followers.append(contentsOf: followers)
-                self.updateData(for: self.followers)
             case .failure(let error):
                 self.presentGPVAlertOnMainThread(title: "Bad Stuff Happened", message: error.rawValue, buttonTitle: "Ok")
             }
