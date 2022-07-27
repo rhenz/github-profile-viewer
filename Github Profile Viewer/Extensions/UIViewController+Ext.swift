@@ -53,12 +53,6 @@ extension UIViewController {
         }
     }
     
-    func showEmptyStateView(with message: String, in view: UIView) {
-        let emptyStateView = GPVEmptyStateView(message: message)
-        emptyStateView.frame = view.bounds
-        view.addSubview(emptyStateView)
-    }
-    
     func presentSafariVC(with url: URL) {
         let safariVC = SFSafariViewController(url: url)
         safariVC.preferredControlTintColor = .systemGreen

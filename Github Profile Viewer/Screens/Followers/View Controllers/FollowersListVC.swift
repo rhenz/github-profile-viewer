@@ -18,14 +18,7 @@ class FollowersListVC: UIViewController {
     // MARK: - Properties
     
     var username: String
-    private var followers: [Follower] = [] {
-        didSet {
-//            guard followers.isEmpty else { return }
-//            DispatchQueue.main.async {
-//                self.showEmptyStateView(with: "This user doesn't have any followers. Go follow them! 😃", in: self.view)
-//            }
-        }
-    }
+    private var followers: [Follower] = []
     private var filteredFollowers: [Follower] = []
     
     private var currentPage = 1
@@ -114,6 +107,15 @@ extension FollowersListVC {
         searchController.searchBar.placeholder = "Search for a username"
         navigationItem.searchController = searchController
     }
+    
+    func showEmptyFollowersView() {
+        DispatchQueue.main.async {
+            let message = "This user doesn't have any followers. Go follow them! 😃"
+            let emptyStateView = GPVEmptyStateView(message: message)
+            emptyStateView.frame = self.view.bounds
+            self.view.addSubview(emptyStateView)
+        }
+    }
 }
 
 // MARK: - Network Request
@@ -127,6 +129,7 @@ extension FollowersListVC {
             
             switch result {
             case .success(let followers):
+                if !followers.isEmpty { self.showEmptyFollowersView(); return }
                 if followers.count < 100 { self.hasMoreFollowers = false }
                 self.followers.append(contentsOf: followers)
                 self.updateData(for: self.followers)
