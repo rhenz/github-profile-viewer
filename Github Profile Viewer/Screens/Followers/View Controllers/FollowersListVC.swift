@@ -20,8 +20,10 @@ class FollowersListVC: UIViewController {
     var username: String
     private var followers: [Follower] = [] {
         didSet {
-            guard followers.isEmpty else { return }
-            DispatchQueue.main.async { self.showEmptyStateView(with: "This user doesn't have any followers. Go follow them! 😃", in: self.view) }
+//            guard followers.isEmpty else { return }
+//            DispatchQueue.main.async {
+//                self.showEmptyStateView(with: "This user doesn't have any followers. Go follow them! 😃", in: self.view)
+//            }
         }
     }
     private var filteredFollowers: [Follower] = []
@@ -156,6 +158,7 @@ extension FollowersListVC: UICollectionViewDelegate {
         let follower = activeArray[indexPath.item]
         
         let destVC = UserInfoVC(username: follower.login)
+        destVC.delegate = self
         let navController = UINavigationController(rootViewController: destVC)
         present(navController, animated: true)
     }
@@ -174,5 +177,18 @@ extension FollowersListVC: UISearchResultsUpdating, UISearchBarDelegate {
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         isSearching = false
         updateData(for: followers)
+    }
+}
+
+
+extension FollowersListVC: UserInfoVCDelegate {
+    func userInfoVC(_ userInfoVC: UserInfoVC, didTapGetFollowersFor user: User) {
+        self.username = user.login
+        navigationItem.title = username
+        currentPage = 1
+        followers.removeAll()
+        filteredFollowers.removeAll()
+        updateData(for: followers)
+        getFollowers(username: self.username, page: currentPage)
     }
 }

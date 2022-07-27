@@ -9,7 +9,7 @@ import UIKit
 
 
 protocol UserInfoVCDelegate: AnyObject {
-    func userInfoVC(_ userInfoVC: UserInfoVC, didTapOnGetFollowers user: User)
+    func userInfoVC(_ userInfoVC: UserInfoVC, didTapGetFollowersFor user: User)
 }
 
 class UserInfoVC: UIViewController {
@@ -157,6 +157,12 @@ extension UserInfoVC: GPVRepoItemVCDelegate, GPVFollowersItemVCDelegate {
     }
     
     func didTapFollowersButton(_ followersItemVC: GPVFollowersItemVC, for user: User) {
-        delegate?.userInfoVC(self, didTapOnGetFollowers: user)
+        guard user.followers > 0 else {
+            presentGPVAlertOnMainThread(title: "No Followers", message: "This user has no followers yet.", buttonTitle: "Ok")
+            return
+        }
+        
+        delegate?.userInfoVC(self, didTapGetFollowersFor: user)
+        dismissVC()
     }
 }
