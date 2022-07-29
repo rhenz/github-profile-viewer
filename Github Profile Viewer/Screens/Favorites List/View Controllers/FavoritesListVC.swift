@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FavoritesListVC: UIViewController {
+class FavoritesListVC: UITableViewController {
     
     // MARK: - Properties
     
@@ -28,6 +28,14 @@ class FavoritesListVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+}
+
+
+// MARK: - Setup UI
+
+extension FavoritesListVC {
+    private func configureView() {
         view.backgroundColor = .systemBackground
     }
 }
