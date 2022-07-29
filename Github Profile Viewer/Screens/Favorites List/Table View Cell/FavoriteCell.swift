@@ -44,8 +44,8 @@ extension FavoriteCell {
 
 extension FavoriteCell {
     func configure() {
-        addSubview(avatarImageView)
-        addSubview(usernameLabel)
+        contentView.addSubview(avatarImageView)
+        contentView.addSubview(usernameLabel)
         
         accessoryType = .disclosureIndicator
         
