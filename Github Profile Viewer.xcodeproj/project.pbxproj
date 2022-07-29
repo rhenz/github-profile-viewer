@@ -20,6 +20,7 @@
 		C939B03528579BF3005827DC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C939B03428579BF3005827DC /* SceneDelegate.swift */; };
 		C939B03C28579BF4005827DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C939B03B28579BF4005827DC /* Assets.xcassets */; };
 		C939B03F28579BF4005827DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C939B03D28579BF4005827DC /* LaunchScreen.storyboard */; };
+		C96C4EEE2894146800894AED /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96C4EED2894146800894AED /* FavoriteCell.swift */; };
 		C97278DB28637B03003B3E15 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97278DA28637B03003B3E15 /* UIHelper.swift */; };
 		C97CF39D287B32A8003F923D /* GPVItemInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97CF39C287B32A8003F923D /* GPVItemInfoVC.swift */; };
 		C97CF3A1287B38EA003F923D /* UserInfoPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97CF3A0287B38EA003F923D /* UserInfoPresentable.swift */; };
@@ -73,6 +74,7 @@
 		C939B03B28579BF4005827DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C939B03E28579BF4005827DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C939B04028579BF4005827DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "Github Profile Viewer/Supporting Files/Info.plist"; sourceTree = SOURCE_ROOT; };
+		C96C4EED2894146800894AED /* FavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
 		C97278DA28637B03003B3E15 /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
 		C97CF39C287B32A8003F923D /* GPVItemInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPVItemInfoVC.swift; sourceTree = "<group>"; };
 		C97CF3A0287B38EA003F923D /* UserInfoPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoPresentable.swift; sourceTree = "<group>"; };
@@ -140,7 +142,7 @@
 		C92BE73A2857A1B000672CC1 /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				C92BE7382857A1AE00672CC1 /* SearchVC.swift */,
+				C96C4EEA2894143100894AED /* View Controllers */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -148,7 +150,8 @@
 		C92BE73D2857A1F000672CC1 /* Favorites List */ = {
 			isa = PBXGroup;
 			children = (
-				C92BE73B2857A1E000672CC1 /* FavoritesListVC.swift */,
+				C96C4EEB2894143D00894AED /* View Controllers */,
+				C96C4EEC2894144500894AED /* Table View Cell */,
 			);
 			path = "Favorites List";
 			sourceTree = "<group>";
@@ -253,6 +256,30 @@
 				C92BE73D2857A1F000672CC1 /* Favorites List */,
 			);
 			path = Screens;
+			sourceTree = "<group>";
+		};
+		C96C4EEA2894143100894AED /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C92BE7382857A1AE00672CC1 /* SearchVC.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		C96C4EEB2894143D00894AED /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C92BE73B2857A1E000672CC1 /* FavoritesListVC.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		C96C4EEC2894144500894AED /* Table View Cell */ = {
+			isa = PBXGroup;
+			children = (
+				C96C4EED2894146800894AED /* FavoriteCell.swift */,
+			);
+			path = "Table View Cell";
 			sourceTree = "<group>";
 		};
 		C97CF39F287B38CF003F923D /* User */ = {
@@ -521,6 +548,7 @@
 				C939B03528579BF3005827DC /* SceneDelegate.swift in Sources */,
 				C9DF6E362861EDB400A4C4E4 /* GPVAvatarImageView.swift in Sources */,
 				C97CF39D287B32A8003F923D /* GPVItemInfoVC.swift in Sources */,
+				C96C4EEE2894146800894AED /* FavoriteCell.swift in Sources */,
 				C92BE7452857B6E800672CC1 /* GPVTextField.swift in Sources */,
 				C9AFDF95285A484000493F55 /* GPVTitleLabel.swift in Sources */,
 				C9BDC46C2880559E00151D9D /* GPVRepoItemVC.swift in Sources */,
