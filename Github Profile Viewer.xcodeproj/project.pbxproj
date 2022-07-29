@@ -21,6 +21,7 @@
 		C939B03C28579BF4005827DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C939B03B28579BF4005827DC /* Assets.xcassets */; };
 		C939B03F28579BF4005827DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C939B03D28579BF4005827DC /* LaunchScreen.storyboard */; };
 		C96C4EEE2894146800894AED /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96C4EED2894146800894AED /* FavoriteCell.swift */; };
+		C96C4EF228941B2C00894AED /* UITableViewCell+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96C4EF128941B2C00894AED /* UITableViewCell+Ext.swift */; };
 		C97278DB28637B03003B3E15 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97278DA28637B03003B3E15 /* UIHelper.swift */; };
 		C97CF39D287B32A8003F923D /* GPVItemInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97CF39C287B32A8003F923D /* GPVItemInfoVC.swift */; };
 		C97CF3A1287B38EA003F923D /* UserInfoPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97CF3A0287B38EA003F923D /* UserInfoPresentable.swift */; };
@@ -75,6 +76,7 @@
 		C939B03E28579BF4005827DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C939B04028579BF4005827DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "Github Profile Viewer/Supporting Files/Info.plist"; sourceTree = SOURCE_ROOT; };
 		C96C4EED2894146800894AED /* FavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
+		C96C4EF128941B2C00894AED /* UITableViewCell+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Ext.swift"; sourceTree = "<group>"; };
 		C97278DA28637B03003B3E15 /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
 		C97CF39C287B32A8003F923D /* GPVItemInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPVItemInfoVC.swift; sourceTree = "<group>"; };
 		C97CF3A0287B38EA003F923D /* UserInfoPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoPresentable.swift; sourceTree = "<group>"; };
@@ -317,6 +319,7 @@
 				C9AFDF9D285A521600493F55 /* UIViewController+Ext.swift */,
 				C923FB332881BC130021D892 /* Date+Ext.swift */,
 				C923FB352881BC1E0021D892 /* String+Ext.swift */,
+				C96C4EF128941B2C00894AED /* UITableViewCell+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -520,6 +523,7 @@
 				C9A8BDCE28728892000A1BE5 /* GPVUserInfoHeaderVC.swift in Sources */,
 				C988EEAD28917816003406D6 /* PlistFavoriteUsersPersistenceManager.swift in Sources */,
 				C97D2F3C285916BC00744065 /* String+Validation.swift in Sources */,
+				C96C4EF228941B2C00894AED /* UITableViewCell+Ext.swift in Sources */,
 				C9B67DBE285F9E68003EFE50 /* GPVError.swift in Sources */,
 				C98C6B0628773E3200D8685E /* GPVItemInfoView.swift in Sources */,
 				C9139BAF285CDC0F00BDBA51 /* Follower.swift in Sources */,
