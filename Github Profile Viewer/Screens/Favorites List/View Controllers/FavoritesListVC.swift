@@ -39,3 +39,15 @@ extension FavoritesListVC {
         view.backgroundColor = .systemBackground
     }
 }
+
+// MARK: - Table View Datasource
+
+extension FavoritesListVC {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        1
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
+    }
+}
