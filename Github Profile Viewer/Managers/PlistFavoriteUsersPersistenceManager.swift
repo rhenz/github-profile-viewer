@@ -22,8 +22,6 @@ class PlistFavoriteUsersPersistenceManager: FavoriteUsersPersistenceService {
     // MARK: - Init
     
     init() {
-        retrieveFavorites()
-        
         // Add observer when didEnterBackground
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self,
@@ -55,7 +53,7 @@ class PlistFavoriteUsersPersistenceManager: FavoriteUsersPersistenceService {
             let decoder = PropertyListDecoder()
             favoriteUsers = try decoder.decode([User].self, from: data)
         } catch {
-            completion?(.unableToFavorite)
+            completion?(.failedToRetrieveFavorites)
         }
     }
     
