@@ -10,6 +10,9 @@ import UIKit
 
 class PlistFavoriteUsersPersistenceManager: FavoriteUsersPersistenceService {
     
+    // MARK: - Shared
+    static let shared = PlistFavoriteUsersPersistenceManager()
+    
     // MARK: - Properties
     
     private let favoritesFilePath: URL = {
