@@ -34,6 +34,18 @@ class FavoritesListVC: UITableViewController {
     }
 }
 
+// MARK: - Helper Methods
+
+extension FavoritesListVC {
+    func getFavorites() {
+        persistenceService.retrieveFavorites { [weak self] error in
+            if let error = error {
+                self?.presentGPVAlertOnMainThread(title: "Retrieve Favorites Error", message: error.localizedDescription, buttonTitle: "Ok")
+            }
+        }
+    }
+}
+
 
 // MARK: - Setup UI
 
