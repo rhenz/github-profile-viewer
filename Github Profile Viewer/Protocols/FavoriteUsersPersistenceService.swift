@@ -7,14 +7,17 @@
 
 import Foundation
 
+enum RetrieveFavoritesResult {
+    case success([User])
+    case failure(GPVError)
+}
+
 protocol FavoriteUsersPersistenceService {
-    typealias RetrieveFavoritesResult = ((GPVError?) -> Void)
-    
     var favoriteUsers: [User] { get }
     
     func save() throws
     func add(favorite: User)
     func remove(favorite: User)
-    func retrieveFavorites(completion: RetrieveFavoritesResult?)
+    func retrieveFavorites(completion: @escaping (RetrieveFavoritesResult) -> Void)
     
 }

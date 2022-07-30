@@ -13,6 +13,8 @@ class FavoritesListVC: UITableViewController {
     
     var persistenceService: FavoriteUsersPersistenceService
     
+    private(set) var favorites = [User]()
+    
     // MARK: - Init
     
     init(persistenceService: FavoriteUsersPersistenceService) {
@@ -38,8 +40,11 @@ class FavoritesListVC: UITableViewController {
 
 extension FavoritesListVC {
     func getFavorites() {
-        persistenceService.retrieveFavorites { [weak self] error in
-            if let error = error {
+        persistenceService.retrieveFavorites { [weak self] result in
+            switch result {
+            case .success:
+                break
+            case .failure(let error):
                 self?.presentGPVAlertOnMainThread(title: "Retrieve Favorites Error", message: error.localizedDescription, buttonTitle: "Ok")
             }
         }

@@ -43,17 +43,18 @@ class PlistFavoriteUsersPersistenceManager: FavoriteUsersPersistenceService {
         }
     }
     
-    func retrieveFavorites(completion: RetrieveFavoritesResult? = nil) {
+    func retrieveFavorites(completion: @escaping (RetrieveFavoritesResult) -> Void) {
         guard let data = try? Data(contentsOf: favoritesFilePath) else {
-            completion?(.invalidData)
+            completion(.failure(.invalidData))
             return
         }
         
         do {
             let decoder = PropertyListDecoder()
             favoriteUsers = try decoder.decode([User].self, from: data)
+            completion(.success(favoriteUsers))
         } catch {
-            completion?(.failedToRetrieveFavorites)
+            completion(.failure(.failedToRetrieveFavorites))
         }
     }
     
