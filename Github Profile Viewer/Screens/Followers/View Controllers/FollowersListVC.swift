@@ -166,6 +166,12 @@ extension FollowersListVC {
             case .success(let user):
                 // Save to favorites
                 self.favoritesPersistenceService.add(favorite: user)
+                try? self.favoritesPersistenceService.save()
+                do {
+                    try self.favoritesPersistenceService.save()
+                } catch {
+                    self.presentGPVAlertOnMainThread(title: "Saving Favorites Error", message: error.localizedDescription, buttonTitle: "Ok")
+                }
             case .failure(let error):
                 self.presentGPVAlertOnMainThread(title: "Error", message: error.localizedDescription, buttonTitle: "Ok")
             }
