@@ -49,6 +49,7 @@ extension FavoritesListVC {
     
     func configureNavigationBar() {
         navigationItem.title = "Favorites"
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
 }
 
