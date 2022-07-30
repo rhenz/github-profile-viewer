@@ -22,3 +22,4 @@ struct User: Codable, Equatable {
 }
 
 extension User: UserInfoPresentable { }
+extension User: FavoriteCellPresentable { }

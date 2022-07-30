@@ -7,6 +7,11 @@
 
 import UIKit
 
+protocol FavoriteCellPresentable {
+    var login: String { get }
+    var avatarUrl: String { get }
+}
+
 class FavoriteCell: UITableViewCell {
 
     // MARK: - View Components
@@ -31,7 +36,7 @@ class FavoriteCell: UITableViewCell {
 // MARK: - Public API
 
 extension FavoriteCell {
-    func set(favorite: Follower) {
+    func set(favorite: FavoriteCellPresentable) {
         usernameLabel.text = favorite.login
         
         dispatchQueue.async {

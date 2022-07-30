@@ -49,6 +49,9 @@ extension FavoritesListVC {
             switch result {
             case .success(let users):
                 self?.favorites = users
+                DispatchQueue.main.async {
+                    self?.tableView.reloadData()
+                }
             case .failure(let error):
                 self?.presentGPVAlertOnMainThread(title: "Retrieve Favorites Error", message: error.localizedDescription, buttonTitle: "Ok")
             }
@@ -79,7 +82,7 @@ extension FavoritesListVC {
 
 extension FavoritesListVC {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        1
+        return favorites.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -88,7 +91,15 @@ extension FavoritesListVC {
         }
         
         // Configure cell
-        cell.set(favorite: Follower(login: "John Salvador", avatarUrl: "https://i.imgur.com/y8Bp4Uq.jpeg"))
+        cell.set(favorite: favorites[indexPath.row])
         return cell
+    }
+}
+
+// MARK: - Table View Delegate
+
+extension FavoritesListVC {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
