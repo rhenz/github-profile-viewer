@@ -30,6 +30,7 @@ class FavoritesListVC: UITableViewController {
         super.viewDidLoad()
         configureView()
         configureTableView()
+        configureNavigationBar()
     }
 }
 
@@ -44,6 +45,10 @@ extension FavoritesListVC {
     private func configureTableView() {
         tableView.estimatedRowHeight = 80
         tableView.register(FavoriteCell.self, forCellReuseIdentifier: FavoriteCell.cellId)
+    }
+    
+    func configureNavigationBar() {
+        navigationItem.title = "Favorites"
     }
 }
 
