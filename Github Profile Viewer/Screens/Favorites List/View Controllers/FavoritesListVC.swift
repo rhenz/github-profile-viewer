@@ -13,7 +13,7 @@ class FavoritesListVC: UITableViewController {
     
     var persistenceService: FavoriteUsersPersistenceService
     
-    private(set) var favorites = [User]()
+    private var favorites = [User]()
     
     // MARK: - Init
     
@@ -34,6 +34,11 @@ class FavoritesListVC: UITableViewController {
         configureTableView()
         configureNavigationBar()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        getFavorites()
+    }
 }
 
 // MARK: - Helper Methods
@@ -42,8 +47,8 @@ extension FavoritesListVC {
     func getFavorites() {
         persistenceService.retrieveFavorites { [weak self] result in
             switch result {
-            case .success:
-                break
+            case .success(let users):
+                self?.favorites = users
             case .failure(let error):
                 self?.presentGPVAlertOnMainThread(title: "Retrieve Favorites Error", message: error.localizedDescription, buttonTitle: "Ok")
             }
