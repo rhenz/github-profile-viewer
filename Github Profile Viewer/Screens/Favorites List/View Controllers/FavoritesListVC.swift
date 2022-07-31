@@ -11,13 +11,13 @@ class FavoritesListVC: UITableViewController {
     
     // MARK: - Properties
     
-    var persistenceService: FavoriteUsersPersistenceService
-    
-    private var favorites = [User]()
+    let favoritesStore: FavoritesStore
+    let persistenceService: FavoriteUsersPersistenceService
     
     // MARK: - Init
     
-    init(persistenceService: FavoriteUsersPersistenceService) {
+    init(favoritesStore: FavoritesStore, persistenceService: FavoriteUsersPersistenceService) {
+        self.favoritesStore = favoritesStore
         self.persistenceService = persistenceService
         super.init(nibName: nil, bundle: nil)
     }
@@ -48,7 +48,7 @@ extension FavoritesListVC {
         persistenceService.retrieveFavorites { [weak self] result in
             switch result {
             case .success(let users):
-                self?.favorites = users
+                self?.favoritesStore.updateFavorites(users)
                 DispatchQueue.main.async {
                     self?.tableView.reloadData()
                 }
@@ -82,7 +82,7 @@ extension FavoritesListVC {
 
 extension FavoritesListVC {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return favorites.count
+        return favoritesStore.favorites.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -91,7 +91,7 @@ extension FavoritesListVC {
         }
         
         // Configure cell
-        cell.set(favorite: favorites[indexPath.row])
+        cell.set(favorite: favoritesStore.favorites[indexPath.row])
         return cell
     }
 }

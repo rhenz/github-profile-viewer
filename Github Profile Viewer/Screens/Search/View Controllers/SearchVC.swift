@@ -16,14 +16,26 @@ class SearchVC: UIViewController, KeyboardDismissable {
     let callToActionButton = GPVButton(backgroundColor: .systemGreen, title: "Get Followers")
     
     // MARK: - Properties
+    
     private var isUsernameEntered: Bool { !(usernameTextField.text?.isEmpty ?? false) }
+    let favoritesStore: FavoritesStore
+    
+    // MARK: - Init
+    
+    init(favoritesStore: FavoritesStore) {
+        self.favoritesStore = favoritesStore
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     // MARK: - View Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
-        
         configureLogoImageView()
         configureTextField()
         configureCallToActionButton()
@@ -44,8 +56,7 @@ class SearchVC: UIViewController, KeyboardDismissable {
             return
         }
         
-        let followersListVC = FollowersListVC(username: username,
-                                              favoritesPersistenceService: PlistFavoriteUsersPersistenceManager())
+        let followersListVC = FollowersListVC(username: username, favoritesStore: favoritesStore, persistenceService: PlistFavoriteUsersPersistenceManager())
         navigationController?.pushViewController(followersListVC, animated: true)
     }
 }

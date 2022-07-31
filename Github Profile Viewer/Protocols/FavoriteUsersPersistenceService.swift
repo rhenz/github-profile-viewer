@@ -9,15 +9,15 @@ import Foundation
 
 enum RetrieveFavoritesResult {
     case success([User])
-    case failure(GPVError)
+    case failure(PersistenceServiceError)
+}
+
+enum PersistenceServiceError: Error {
+    case unableToSave
+    case unableToRetrieveFavorites
 }
 
 protocol FavoriteUsersPersistenceService {
-    var favoriteUsers: [User] { get }
-    
-    func save() throws
-    func add(favorite: User)
-    func remove(favorite: User)
+    func save(_ favorites: [User]) throws
     func retrieveFavorites(completion: @escaping (RetrieveFavoritesResult) -> Void)
-    
 }

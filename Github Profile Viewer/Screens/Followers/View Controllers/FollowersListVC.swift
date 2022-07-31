@@ -35,13 +35,15 @@ class FollowersListVC: UIViewController {
     var collectionView: UICollectionView!
     var dataSource: UICollectionViewDiffableDataSource<Section, Follower>!
     
-    var favoritesPersistenceService: FavoriteUsersPersistenceService
+    let favoritesStore: FavoritesStore
+    let persistenceService: FavoriteUsersPersistenceService
     
     // MARK: - Init
     
-    init(username: String, favoritesPersistenceService: FavoriteUsersPersistenceService) {
+    init(username: String, favoritesStore: FavoritesStore, persistenceService: FavoriteUsersPersistenceService) {
         self.username = username
-        self.favoritesPersistenceService = favoritesPersistenceService
+        self.favoritesStore = favoritesStore
+        self.persistenceService = persistenceService
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -152,7 +154,7 @@ extension FollowersListVC {
     @objc func addToFavoritesButtonTapped(_ sender: UIBarButtonItem) {
         
         // Check if user favorited already.
-        if favoritesPersistenceService.favoriteUsers.contains(where: {$0.login.lowercased() == self.username.lowercased() }) {
+        if favoritesStore.favorites.contains(where: {$0.login.lowercased() == self.username.lowercased() }) {
             presentGPVAlertOnMainThread(title: "Notice", message: "You favorited this user already.", buttonTitle: "Ok")
             return
         }
@@ -165,10 +167,9 @@ extension FollowersListVC {
             switch result {
             case .success(let user):
                 // Save to favorites
-                self.favoritesPersistenceService.add(favorite: user)
-                try? self.favoritesPersistenceService.save()
+                self.favoritesStore.add(user)
                 do {
-                    try self.favoritesPersistenceService.save()
+                    try self.persistenceService.save(self.favoritesStore.favorites)
                 } catch {
                     self.presentGPVAlertOnMainThread(title: "Saving Favorites Error", message: error.localizedDescription, buttonTitle: "Ok")
                 }
