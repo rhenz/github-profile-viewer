@@ -45,6 +45,11 @@ class MainTabBarController: UITabBarController {
         
         configureNavigationBar()
         configureAppearanceForiOS15()
+        
+        
+        print(UIDevice.current.model)
+        print(UIDevice.current.name)
+        print(UIDevice.current.userInterfaceIdiom)
     }
 }
 

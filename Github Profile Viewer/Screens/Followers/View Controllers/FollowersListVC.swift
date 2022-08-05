@@ -20,7 +20,7 @@ class FollowersListVC: UIViewController {
     var username: String
     private var followers: [Follower] = [] {
         didSet {
-            if followers.count < 100 { self.hasMoreFollowers = false }
+            if followers.count < followersPerPage { self.hasMoreFollowers = false }
             self.updateData(for: self.followers)
         }
     }

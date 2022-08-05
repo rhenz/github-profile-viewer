@@ -77,14 +77,17 @@ extension SearchVC {
         view.addSubview(logoImageView)
         
         logoImageView.translatesAutoresizingMaskIntoConstraints = false
-        logoImageView.image = UIImage(named: "gh-logo")
+        logoImageView.image = UIImage(named: Styles.Images.logo)
         logoImageView.contentMode = .scaleAspectFit
         
+        let topAnchorConstant: CGFloat = UIDevice.modelName == .iPodTouch7thGen ? 10 : 80
+        let widthHeightConstant: CGFloat = UIDevice.modelName == .iPodTouch7thGen ? 170 : 200
+        
         NSLayoutConstraint.activate([
-            logoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 80),
+            logoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: topAnchorConstant),
             logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            logoImageView.heightAnchor.constraint(equalToConstant: 200),
-            logoImageView.widthAnchor.constraint(equalToConstant: 200)
+            logoImageView.heightAnchor.constraint(equalToConstant: widthHeightConstant),
+            logoImageView.widthAnchor.constraint(equalToConstant: widthHeightConstant)
         ])
     }
     

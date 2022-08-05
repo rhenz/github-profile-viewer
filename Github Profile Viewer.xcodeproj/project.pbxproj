@@ -47,6 +47,7 @@
 		C9C61E3C28963ADF007233BC /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C61E3B28963ADF007233BC /* MainTabBarController.swift */; };
 		C9CD85B72868A89B003CA47B /* LoadMoreActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CD85B62868A89B003CA47B /* LoadMoreActivityIndicator.swift */; };
 		C9CE936A2871F31300612AE9 /* UserInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CE93692871F31300612AE9 /* UserInfoVC.swift */; };
+		C9CFAB7E289D433F0013BCD9 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CFAB7D289D433F0013BCD9 /* Device.swift */; };
 		C9DF6E332861ED4100A4C4E4 /* FollowerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DF6E322861ED4100A4C4E4 /* FollowerCell.swift */; };
 		C9DF6E362861EDB400A4C4E4 /* GPVAvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DF6E352861EDB400A4C4E4 /* GPVAvatarImageView.swift */; };
 /* End PBXBuildFile section */
@@ -105,6 +106,7 @@
 		C9CD85B62868A89B003CA47B /* LoadMoreActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadMoreActivityIndicator.swift; sourceTree = "<group>"; };
 		C9CE935D2871EFB700612AE9 /* Github Profile ViewerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Github Profile ViewerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9CE93692871F31300612AE9 /* UserInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoVC.swift; sourceTree = "<group>"; };
+		C9CFAB7D289D433F0013BCD9 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		C9DF6E322861ED4100A4C4E4 /* FollowerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerCell.swift; sourceTree = "<group>"; };
 		C9DF6E352861EDB400A4C4E4 /* GPVAvatarImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPVAvatarImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -372,6 +374,7 @@
 				C9B67DBD285F9E68003EFE50 /* GPVError.swift */,
 				C97278DA28637B03003B3E15 /* UIHelper.swift */,
 				C9A8BDD22872906F000A1BE5 /* Constants.swift */,
+				C9CFAB7D289D433F0013BCD9 /* Device.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -562,6 +565,7 @@
 				C9C08B272867080900AD1D8B /* UIImageView+Download.swift in Sources */,
 				C9DF6E332861ED4100A4C4E4 /* FollowerCell.swift in Sources */,
 				C97D2F36285909C800744065 /* KeyboardDismissable.swift in Sources */,
+				C9CFAB7E289D433F0013BCD9 /* Device.swift in Sources */,
 				C988EEAF2891869A003406D6 /* FavoriteUsersPersistenceService.swift in Sources */,
 				C9AFDF97285A4A9B00493F55 /* GPVBodyLabel.swift in Sources */,
 				C92BE7402857ABFC00672CC1 /* GPVButton.swift in Sources */,

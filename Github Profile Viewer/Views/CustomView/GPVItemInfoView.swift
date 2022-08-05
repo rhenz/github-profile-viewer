@@ -79,13 +79,13 @@ extension GPVItemInfoView {
         var image: UIImage? {
             switch self {
             case .repos:
-                return UIImage(systemName: SFSymbols.repos)
+                return UIImage(systemName: Styles.SFSymbols.repos)
             case .gists:
-                return UIImage(systemName: SFSymbols.gists)
+                return UIImage(systemName: Styles.SFSymbols.gists)
             case .followers:
-                return UIImage(systemName: SFSymbols.followers)
+                return UIImage(systemName: Styles.SFSymbols.followers)
             case .following:
-                return UIImage(systemName: SFSymbols.following)
+                return UIImage(systemName: Styles.SFSymbols.following)
             }
         }
         

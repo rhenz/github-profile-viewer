@@ -51,7 +51,7 @@ extension GPVUserInfoHeaderVC {
         nameLabel.text = user.name
         locationLabel.text = user.location ?? "No Location"
         bioLabel.text = user.bio ?? "No bio available."
-        locationImageView.image = UIImage(systemName: SFSymbols.location)
+        locationImageView.image = UIImage(systemName: Styles.SFSymbols.location)
     }
     
     func addSubviews() {
