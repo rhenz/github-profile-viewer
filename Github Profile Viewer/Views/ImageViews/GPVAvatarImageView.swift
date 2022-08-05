@@ -12,7 +12,7 @@ class GPVAvatarImageView: UIImageView {
     // MARK: -
     
     private let cache = NetworkManager.shared.cache
-    let placeholderImage = UIImage(named: "avatar-placeholder")!
+    let placeholderImage = UIImage(named: Styles.Images.avatarPlaceholder)!
 
     // MARK: - Init
     

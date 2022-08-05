@@ -18,5 +18,7 @@ enum Styles {
     
     enum Images {
         static let logo = "gh-logo"
+        static let emptyStateLogo = "empty-state-logo"
+        static let avatarPlaceholder = "avatar-placeholder"
     }
 }

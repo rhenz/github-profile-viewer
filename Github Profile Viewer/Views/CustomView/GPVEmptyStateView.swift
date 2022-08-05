@@ -37,7 +37,7 @@ class GPVEmptyStateView: UIView {
         messageLabel.numberOfLines = 3
         messageLabel.textColor = .secondaryLabel
         
-        logoImageView.image = UIImage(named: "empty-state-logo")
+        logoImageView.image = UIImage(named: Styles.Images.emptyStateLogo)
         logoImageView.translatesAutoresizingMaskIntoConstraints = false
         
         let padding: CGFloat = 40
