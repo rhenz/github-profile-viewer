@@ -101,5 +101,30 @@ extension FavoritesListVC {
 extension FavoritesListVC {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        let username = favoritesStore.favorites[indexPath.row].login
+        let vc = FollowersListVC(username: username,
+                                 favoritesStore: favoritesStore,
+                                 persistenceService: persistenceService)
+        
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if editingStyle == .delete {
+            let user = favoritesStore.favorites[indexPath.row]
+            favoritesStore.delete(user)
+            
+            // Save to persistence
+            do {
+                try persistenceService.save(favoritesStore.favorites)
+                
+                tableView.deleteRows(at: [indexPath], with: .fade)
+            } catch {
+                favoritesStore.insertUser(user, at: indexPath.row) // return user item back when this failed
+                presentGPVAlertOnMainThread(title: "Error", message: error.localizedDescription, buttonTitle: "Ok")
+            }
+        }
     }
 }

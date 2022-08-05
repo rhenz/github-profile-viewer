@@ -19,6 +19,10 @@ class FavoritesStore {
         favorites.append(user)
     }
     
+    func insertUser(_ user: User, at index: Int) {
+        favorites.insert(user, at: index)
+    }
+    
     func delete(_ user: User) {
         if let index = favorites.firstIndex(of: user) {
             favorites.remove(at: index)
