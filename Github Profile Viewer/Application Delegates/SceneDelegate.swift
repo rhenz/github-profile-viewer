@@ -15,10 +15,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
-        // Setup Appearances
-        configureAppearanceForiOS15()
-        configureNavigationBar()
-        
         // Initialize Window
         window = UIWindow(windowScene: windowScene)
         
@@ -35,27 +31,5 @@ private extension SceneDelegate {
         let tabBar = MainTabBarController()
         UITabBar.appearance().tintColor = .systemGreen
         return tabBar
-    }
-    
-    func configureNavigationBar() {
-        UINavigationBar.appearance().tintColor = .systemGreen
-    }
-    
-    func configureAppearanceForiOS15() {
-        // Setup UITabBar Appearance for iOS 15
-        if #available(iOS 15, *) {
-            // Setup Tab Bar Appearance like the default appearance in previous iOS Versions
-            let tabBarAppearance = UITabBarAppearance()
-            tabBarAppearance.configureWithDefaultBackground()
-            UITabBar.appearance().standardAppearance = tabBarAppearance
-            UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
-            
-            // For navigation bar
-            let navBarAppearance = UINavigationBarAppearance()
-            navBarAppearance.configureWithDefaultBackground()
-            UINavigationBar.appearance().standardAppearance = navBarAppearance
-            UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance
-            UINavigationBar.appearance().compactAppearance = navBarAppearance
-        }
     }
 }

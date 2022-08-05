@@ -42,5 +42,34 @@ class MainTabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        configureNavigationBar()
+        configureAppearanceForiOS15()
+    }
+}
+
+// MARK: - Helper Methods
+
+extension MainTabBarController {
+    func configureNavigationBar() {
+        UINavigationBar.appearance().tintColor = .systemGreen
+    }
+    
+    func configureAppearanceForiOS15() {
+        // Setup UITabBar Appearance for iOS 15
+        if #available(iOS 15, *) {
+            // Setup Tab Bar Appearance like the default appearance in previous iOS Versions
+            let tabBarAppearance = UITabBarAppearance()
+            tabBarAppearance.configureWithDefaultBackground()
+            UITabBar.appearance().standardAppearance = tabBarAppearance
+            UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
+            
+            // For navigation bar
+            let navBarAppearance = UINavigationBarAppearance()
+            navBarAppearance.configureWithDefaultBackground()
+            UINavigationBar.appearance().standardAppearance = navBarAppearance
+            UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance
+            UINavigationBar.appearance().compactAppearance = navBarAppearance
+        }
     }
 }
