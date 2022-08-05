@@ -20,10 +20,9 @@ class GPVSecondaryTitleLabel: UILabel {
         fatalError("You should not init \(String(describing: Self.self)) using init(coder:)")
     }
     
-    init(fontSize: CGFloat) {
-        super.init(frame: .zero)
+    convenience init(fontSize: CGFloat) {
+        self.init(frame: .zero)
         self.font = UIFont.systemFont(ofSize: fontSize, weight: .medium)
-        configure()
     }
     
     

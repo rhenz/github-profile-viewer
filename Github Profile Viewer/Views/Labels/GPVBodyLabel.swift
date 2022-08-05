@@ -13,18 +13,16 @@ class GPVBodyLabel: UILabel {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        configure()
     }
     
     required init?(coder: NSCoder) {
         fatalError("You should not init \(String(describing: Self.self)) using init(coder:)")
     }
     
-    init(textAlignment: NSTextAlignment) {
-        super.init(frame: .zero)
-        
+    convenience init(textAlignment: NSTextAlignment) {
+        self.init(frame: .zero)
         self.textAlignment = textAlignment
-        
-        configure()
     }
     
     
