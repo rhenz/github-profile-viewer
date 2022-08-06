@@ -191,8 +191,11 @@ extension FollowersListVC {
             
             switch result {
             case .success(let followers):
-                if followers.isEmpty { self.showEmptyFollowersView(); return }
-                self.followers.append(contentsOf: followers)
+                if followers.isEmpty {
+                    self.showEmptyFollowersView()
+                } else {
+                    self.followers.append(contentsOf: followers)
+                }
             case .failure(let error):
                 self.presentGPVAlertOnMainThread(title: "Bad Stuff Happened", message: error.rawValue, buttonTitle: "Ok")
             }

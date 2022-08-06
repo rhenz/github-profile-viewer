@@ -63,8 +63,6 @@ extension UserInfoVC {
     private func layoutUI() {
         itemViews = [headerView, itemViewOne, itemViewTwo, dateLabel]
         
-        
-        
         let padding: CGFloat = 20
         let itemHeight: CGFloat = 140
         
@@ -147,7 +145,7 @@ extension UserInfoVC {
 // MARK: -
 
 extension UserInfoVC: GPVRepoItemVCDelegate, GPVFollowersItemVCDelegate {
-    func didTapRepoButton(_ repoItemVC: GPVRepoItemVC, for user: User) {
+    func gpvRepoItemVC(_ repoItemVC: GPVRepoItemVC, didTapRepoButtonFor user: User) {
         guard let url = URL(string: user.htmlUrl) else {
             presentGPVAlertOnMainThread(title: "Invalid URL", message: "The url attached to this user is invalid", buttonTitle: "Ok")
             return
@@ -156,7 +154,7 @@ extension UserInfoVC: GPVRepoItemVCDelegate, GPVFollowersItemVCDelegate {
         presentSafariVC(with: url)
     }
     
-    func didTapFollowersButton(_ followersItemVC: GPVFollowersItemVC, for user: User) {
+    func gpvFollowersItemVC(_ controller: GPVFollowersItemVC, didTapFollowersButtonFor user: User) {
         guard user.followers > 0 else {
             presentGPVAlertOnMainThread(title: "No Followers", message: "This user has no followers yet.", buttonTitle: "Ok")
             return

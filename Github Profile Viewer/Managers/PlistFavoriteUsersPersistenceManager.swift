@@ -17,8 +17,6 @@ class PlistFavoriteUsersPersistenceManager: FavoriteUsersPersistenceService {
         return directory.appendingPathComponent("FavoriteUsers.plist")
     }()
     
-    // MARK: - Init
-    
     // MARK: - Methods
     
     func save(_ favorites: [User]) throws {

@@ -25,15 +25,13 @@ class LoadMoreActivityIndicator {
         self.scrollView = scrollView
         self.spacingFromLastCell = spacingFromLastCell
         self.spacingFromLastCellWhenLoadMoreActionStart = spacingFromLastCellWhenLoadMoreActionStart
+        
         let size:CGFloat = 40
         let frame = CGRect(x: (scrollView.frame.width-size)/2, y: scrollView.contentSize.height + spacingFromLastCell, width: size, height: size)
         let activityIndicatorView = UIActivityIndicatorView(frame: frame)
-        if #available(iOS 13.0, *)
-        {
+        if #available(iOS 13.0, *) {
             activityIndicatorView.color = .label
-        }
-        else
-        {
+        } else {
             activityIndicatorView.color = .black
         }
         activityIndicatorView.autoresizingMask = [.flexibleLeftMargin, .flexibleRightMargin]
