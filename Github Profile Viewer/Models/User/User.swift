@@ -18,7 +18,7 @@ struct User: Codable, Equatable {
     let htmlUrl: String
     let followers: Int
     let following: Int
-    var createdAt: String
+    var createdAt: Date
 }
 
 extension User: UserInfoPresentable { }

@@ -123,7 +123,7 @@ extension UserInfoVC {
                     
                     self.add(childVC: repoItemVC, to: self.itemViewOne)
                     self.add(childVC: followersItemVC, to: self.itemViewTwo)
-                    self.dateLabel.text = "Github since " + user.createdAt.convertToDisplayFormat
+                    self.dateLabel.text = "Github since " + user.createdAt.convertToMonthYearFormat
                 }
             case .failure(let error):
                 self.presentGPVAlertOnMainThread(title: "Bad Stuff Happened", message: error.rawValue, buttonTitle: "Ok")
