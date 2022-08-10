@@ -5,7 +5,7 @@ workflows:
       - name: CICD STARTED
         script: echo "Welcome to your CICD set up"
       - name: Build github-profile-workflow
-        script: - xcodebuild build -project "Github\ Profile\ Viewer.xcodeproj" -scheme "Github\ Profile\ Viewer" CODE_SIGN_INDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
+        script: xcodebuild build -project "Github\ Profile\ Viewer.xcodeproj" -scheme "Github\ Profile\ Viewer" CODE_SIGN_INDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
     publishing:
       email:
         recipients:
