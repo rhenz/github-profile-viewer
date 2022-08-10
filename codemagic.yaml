@@ -1,0 +1,10 @@
+workflows:
+  github-profile-workflow:
+    name: Github Profile Viewer Pipeline
+    scripts:
+      - name: CICD STARTED
+      script: echo "Welcome to your CICD set up"
+    publishing:
+      email:
+        recipients:
+          - salvador.rhenz@gmail.com
