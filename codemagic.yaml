@@ -3,7 +3,7 @@ workflows:
     name: Github Profile Viewer Pipeline
     scripts:
       - name: CICD STARTED
-      script: echo "Welcome to your CICD set up"
+        script: echo "Welcome to your CICD set up"
     publishing:
       email:
         recipients:
